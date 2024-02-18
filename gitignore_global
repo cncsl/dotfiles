@@ -1,0 +1,10 @@
+# jetbrains
+.idea
+
+# vim
+*.swp
+*.swo
+*.so
+
+# mac
+.DS_Store
