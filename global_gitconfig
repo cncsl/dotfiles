@@ -1,9 +1,0 @@
-[http "https://github.com"]
-	proxy = socks5://127.0.0.1:8119
-
-[core]
-	autocrlf = input
-	safecrlf = true
-	eol = lf
-	ignorecase = false
-	excludesfile = ~/.gitignore_global

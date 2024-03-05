@@ -79,6 +79,8 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    z
+    tmux
     zsh-syntax-highlighting
     zsh-autosuggestions
     iterm2
@@ -121,12 +123,17 @@ export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
 export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 # node
-export NODE_PATH="/opt/homebrew/opt/node@18"
+export NODE_PATH="/usr/local/opt/node@18"
 export PATH="$NODE_PATH/bin:$PATH"
+
+# Java
+export JAVA_HOME="/Users/cncsl/develop/jdk-17.0.7+7/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # ----- shell 工具 start -----
 # atuin(shell 历史记录写入sqlite)
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # ----- shell 工具 end -----
+
 
