@@ -82,7 +82,6 @@ plugins=(
     z
     tmux
     zsh-syntax-highlighting
-    zsh-autosuggestions
     iterm2
     macos
 )
