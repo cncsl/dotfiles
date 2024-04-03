@@ -1,6 +1,7 @@
 [user]
 	name = cncsl
 	email = justitacsl@outlook.com
+
 [core]
 	autocrlf = input
 	safecrlf = true
@@ -8,5 +9,9 @@
 	ignorecase = false
 	excludesfile = ~/.gitignore_global
 	quotepath = false
+
 [http "https://github.com"]
 	proxy = socks5://127.0.0.1:8119
+
+[includeIf "gitdir:~/work/work_codes/"]
+  path = ~/work/config/gitconfig
