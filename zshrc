@@ -108,7 +108,7 @@ export EDITOR='nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
- 
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -121,9 +121,10 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
 export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
-# node
-export NODE_PATH="/usr/local/opt/node@18"
-export PATH="$NODE_PATH/bin:$PATH"
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Java
 export JAVA_HOME="/Users/cncsl/develop/jdk-17.0.7+7/Contents/Home"
@@ -134,5 +135,3 @@ export PATH="$JAVA_HOME/bin:$PATH"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # ----- shell 工具 end -----
-
-
