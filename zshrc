@@ -119,8 +119,20 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Java
-export JAVA_HOME="/Users/cncsl/develop/jdk-17.0.7+7/Contents/Home"
+export JAVA_HOME="$HOME/develop/jdk-17.0.7+7/Contents/Home"
 export PATH="$JAVA_HOME/bin:$PATH"
+
+# Ruby
+export RUBY_HOME="/usr/local/opt/ruby"
+export PATH="$RUBY_HOME/bin:$PATH" # ruby
+export PATH="/usr/local/lib/ruby/gems/3.3.0/bin:$PATH" # runnable binaries installed by gem
+# 暂时不知道改这两个有啥影响
+# export LDFLAGS="-L/usr/local/opt/ruby/lib"
+# export CPPFLAGS="-L/usr/local/opt/ruby/include"
+
+# Flutter
+export FLUTTER_HOME="$HOME/develop/flutter/"
+export PATH="$FLUTTER_HOME/bin:$PATH"
 
 # ----- shell 工具 start -----
 # atuin(shell 历史记录写入sqlite)
