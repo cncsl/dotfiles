@@ -27,9 +27,10 @@ return {
       opt = { -- vim.opt.<key>
         relativenumber = false, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
-        spell = false, -- sets vim.opt.spell
+        spell = true, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
+        cursorline = false, -- sets vim.opt.cursorline
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
