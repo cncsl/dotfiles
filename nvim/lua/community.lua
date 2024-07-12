@@ -13,14 +13,15 @@ return {
   --常用文件格式支持
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.yaml" },
-  --前端
+  -- lsp
+  { import = "astrocommunity.lsp.nvim-lsp-file-operations"},
+  --语言支持
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.vue" },
-  --脚本
+  { import = "astrocommunity.pack.dart" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.bash" },
-  --python
   { import = "astrocommunity.pack.python" },
 }
