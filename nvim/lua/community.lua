@@ -10,18 +10,11 @@ return {
   --ui/ux
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
-  --常用文件格式支持
-  { import = "astrocommunity.pack.json" },
-  { import = "astrocommunity.pack.yaml" },
   -- lsp
   { import = "astrocommunity.lsp.nvim-lsp-file-operations"},
-  --语言支持
-  { import = "astrocommunity.pack.html-css" },
-  { import = "astrocommunity.pack.tailwindcss" },
-  { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.pack.vue" },
-  { import = "astrocommunity.pack.dart" },
+  -- 暂时没有自定义需求的 pack
+  { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.bash" },
-  { import = "astrocommunity.pack.python" },
 }
