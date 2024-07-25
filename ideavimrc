@@ -1,0 +1,69 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" UI/UX
+set scrolloff=5
+set autoindent
+set number
+set showcmd
+set showmode
+
+" search
+set hlsearch
+set incsearch
+set smartcase
+
+" system clipboard
+set clipboard+=unnamed
+
+let mapleader=" "
+let g:mapleader=" "
+
+nmap <leader>e <action>(SelectInProjectView)
+
+"" find
+nmap <leader>fa <Action>(SearchEverywhere)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fr <Action>(RecentFiles)
+nmap <leader>fw <Action>(FindInPath)
+nmap <leader>fb <Action>(Switcher)
+
+"" code jump
+nmap gr <Action>(FindUsages)
+nmap gi <Action>(GotoImplementation)
+nmap gy <Action>(GotoTypeDeclaration)
+nmap <leader>lR <Action>(FindUsages)
+
+nmap <leader>/ <Action>(CommentByLineComment)
+vmap <leader>/ <Action>(CommentByLineComment)
+nmap <leader>lf <Action>(ReformatCode)
+nmap <leader>lr <Action>(RenameElement)
+
+"" git operation
+nmap <leader>gt <Action>(ActivateCommitToolWindow)
+nmap <leader>gC <Action>(Vcs.ShowTabbedFileHistory)
+
+
+"" tabs (buffers in AstroNvim)
+nmap H <Action>(PreviousTab)
+nmap L <Action>(NextTab)
+nmap <leader>bc <Action>(CloseAllEditorsButActive)
+nmap <leader>bC <Action>(CloseAllEditors)
+
+"" VISUAL 模式下 * 搜索选中内容
+vmap * "ry/<C-R>r<CR>
+
+"" 快速关闭上次搜索结果高亮
+nmap <leader>nh :nohlsearch<CR>
+
+" 插件
+" 高亮 yank 的文本
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+" 输入法切换
+set keep-english-in-normal-and-restore-in-insert
+
