@@ -132,7 +132,7 @@ export PATH="/usr/local/lib/ruby/gems/3.3.0/bin:$PATH" # runnable binaries insta
 # export CPPFLAGS="-L/usr/local/opt/ruby/include"
 
 # Flutter
-export FLUTTER_HOME="$HOME/develop/flutter/"
+export FLUTTER_HOME="$HOME/develop/flutter"
 export PATH="$FLUTTER_HOME/bin:$PATH"
 
 # ----- shell 工具 start -----
