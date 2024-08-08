@@ -37,8 +37,9 @@ nmap gy <Action>(GotoTypeDeclaration)
 nmap <leader>lR <Action>(FindUsages)
 
 nmap <leader>/ <Action>(CommentByLineComment)
-vmap <leader>/ <Action>(CommentByLineComment)
+vmap <leader>/ <Action>(CommentByLineComment)<ESC>
 nmap <leader>lf <Action>(ReformatCode)
+vmap <leader>lf <Action>(ReformatCode)<ESC>
 nmap <leader>lr <Action>(RenameElement)
 
 "" git operation
