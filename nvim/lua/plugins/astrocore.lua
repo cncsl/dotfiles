@@ -10,7 +10,7 @@ return {
   opts = {
     -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+      large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
       diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
@@ -28,7 +28,7 @@ return {
         relativenumber = false, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
-        signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
         cursorline = false, -- sets vim.opt.cursorline
         scrolloff = 5, --sets vim.opt.scrolloff
@@ -51,24 +51,25 @@ return {
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- mappings seen under group name "Buffer"
-        ["<Leader>bD"] = {
+        ["<Leader>bd"] = {
           function()
             require("astroui.status.heirline").buffer_picker(
               function(bufnr) require("astrocore.buffer").close(bufnr) end
             )
           end,
-          desc = "Pick to close",
+          desc = "Close buffer from tabline",
         },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
-        ["<Leader>b"] = { desc = "Buffers" },
+        -- ["<Leader>b"] = { desc = "Buffers" },
+
         -- unlike default configuration, there mappings action are not "force"
         ["<C-s>"] = { ":w<cr>", desc = "Save File" },
         ["<C-q>"] = { ":q<cr>", desc = "Fast Quit" },
-      },
-      t = {
+
         -- setting a mapping to false will disable it
-        -- ["<esc>"] = false,
+        -- ["<C-S>"] = false,
       },
     },
   },
