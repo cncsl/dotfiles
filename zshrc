@@ -134,6 +134,8 @@ export PATH="/usr/local/lib/ruby/gems/3.3.0/bin:$PATH" # runnable binaries insta
 # Flutter
 export FLUTTER_HOME="$HOME/develop/flutter"
 export PATH="$FLUTTER_HOME/bin:$PATH"
+export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub;
+export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 
 # ----- shell 工具 start -----
 # atuin(shell 历史记录写入sqlite)
