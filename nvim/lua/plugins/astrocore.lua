@@ -65,8 +65,9 @@ return {
         -- ["<Leader>b"] = { desc = "Buffers" },
 
         -- unlike default configuration, there mappings action are not "force"
-        ["<C-s>"] = { ":w<cr>", desc = "Save File" },
+        ["<C-s>"] = { ":w<cr>", desc = "Fast Save" },
         ["<C-q>"] = { ":q<cr>", desc = "Fast Quit" },
+        ["<C-x>"] = { ":wq<cr>", desc = "Fast Save And Quit" },
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
