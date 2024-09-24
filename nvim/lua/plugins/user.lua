@@ -37,6 +37,22 @@ return {
     },
   },
   {
+    "hrsh7th/nvim-cmp",
+    config = function(plugin, opts)
+      local cmp = require "cmp"
+      -- disable path source
+      opts.sources = opts.sources or {}
+      for i, source in ipairs(opts.sources) do
+        if source.name == "path" then
+          table.remove(opts.sources, i)
+          break
+        end
+      end
+      -- run cmp setup
+      cmp.setup(opts)
+    end,
+  },
+  {
     {
       "wakatime/vim-wakatime",
       lazy = false,
