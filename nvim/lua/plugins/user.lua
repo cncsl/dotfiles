@@ -48,6 +48,9 @@ return {
           break
         end
       end
+      -- auto select first item
+      opts.completion = opts.completion or {}
+      opts.completion["completeopt"] = "menu,menuone,preview,noinsert"
       -- run cmp setup
       cmp.setup(opts)
     end,
