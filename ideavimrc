@@ -45,6 +45,7 @@ nmap <leader>lr <Action>(RenameElement)
 "" git operation
 nmap <leader>gt <Action>(ActivateCommitToolWindow)
 nmap <leader>gC <Action>(Vcs.ShowTabbedFileHistory)
+nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 nmap <leader>gl <Action>(Annotate)
 
 "" tabs (buffers in AstroNvim)
