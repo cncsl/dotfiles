@@ -142,3 +142,6 @@ export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # ----- shell 工具 end -----
+
+# 工作
+source "$HOME/work/config/.zshrc_work" 
