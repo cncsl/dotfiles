@@ -120,7 +120,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Java
-export JAVA_HOME="$HOME/develop/graalvm-jdk-21.0.3+7.1/Contents/Home"
+export JAVA_HOME="$HOME/develop/graalvm-jdk-17.0.13+10.1/Contents/Home"
 export PATH="$JAVA_HOME/bin:$PATH"
 
 # Ruby
