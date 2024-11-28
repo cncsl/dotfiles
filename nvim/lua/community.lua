@@ -5,6 +5,8 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+  --editor
+  { import = "astrocommunity.editing-support.auto-save-nvim"},
   --theme
   { import = "astrocommunity.colorscheme.dracula-nvim" },
   --ui/ux
