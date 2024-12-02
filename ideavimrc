@@ -52,6 +52,15 @@ nmap L <Action>(NextTab)
 nmap <leader>bc <Action>(CloseAllEditorsButActive)
 nmap <leader>bC <Action>(CloseAllEditors)
 
+"" debug
+nmap <leader>dc <Action>(Debug)
+nmap <leader>dq <Action>(Stop)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>do <Action>(StepOver)
+nmap <leader>di <Action>(StepInto)
+nmap <leader>dO <Action>(StepOut)
+nmap <leader>dE <Action>(EvaluateExpression)
+
 "" VISUAL 模式下 * 搜索选中内容
 vmap * "ry/<C-R>r<CR>
 
