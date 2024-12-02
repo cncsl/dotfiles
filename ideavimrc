@@ -21,8 +21,6 @@ set clipboard+=unnamed
 let mapleader=" "
 let g:mapleader=" "
 
-nmap <leader>e <action>(SelectInProjectView)
-
 "" find
 nmap <leader>fa <Action>(SearchEverywhere)
 nmap <leader>ff <Action>(GotoFile)
