@@ -85,6 +85,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export XDG_CONFIG_HOME="$HOME/.config"
 
 setopt no_nomatch
 # export MANPATH="/usr/local/man:$MANPATH"

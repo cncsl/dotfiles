@@ -1,0 +1,9 @@
+gui:
+
+  # If true, do not show a warning when discarding changes in the staging view.
+  skipDiscardChangeWarning: true
+
+  # Nerd fonts version to use.
+  # One of: '2' | '3' | empty string (default)
+  # If empty, do not show icons.
+  nerdFontsVersion: "3"
