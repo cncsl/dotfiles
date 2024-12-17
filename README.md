@@ -20,6 +20,9 @@ ln -s `pwd`/npmrc $HOME/.npmrc
 mkdir -p $HOME/.pip/
 ln -s `pwd`/pip.conf $HOME/.config/pip/pip.conf
 
+mkdir -p $HOME/.config/gem/
+ln -s `pwd`/gemrc $HOME/.config/gemrc
+
 mkdir -p $XDG_CONFIG_HOME/lazygit/
 ln -s `pwd`/lazygit_config.yml $XDG_CONFIG_HOME/lazygit/config.yml
 ```
