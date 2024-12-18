@@ -50,16 +50,6 @@ return {
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        -- mappings seen under group name "Buffer"
-        ["<Leader>bd"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Close buffer from tabline",
-        },
-
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
@@ -68,6 +58,20 @@ return {
         ["<C-s>"] = { ":w<cr>", desc = "Fast Save" },
         ["<C-q>"] = { ":q<cr>", desc = "Fast Quit" },
         ["<C-x>"] = { ":wq<cr>", desc = "Fast Save And Quit" },
+
+        -- quickly resize split
+        ["<M-h>"] = { function() require("smart-splits").resize_left() end,
+          desc = "Resize split left",
+        },
+        ["<M-j>"] = { function() require("smart-splits").resize_down() end,
+          desc = "Resize split down",
+        },
+        ["<M-k>"] = { function() require("smart-splits").resize_up() end,
+          desc = "Resize split up",
+        },
+        ["<M-l>"] = { function() require("smart-splits").resize_right() end,
+          desc = "Resize split right",
+        },
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
