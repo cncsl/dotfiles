@@ -138,6 +138,9 @@ export PATH="$FLUTTER_HOME/bin:$PATH"
 export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub;
 export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 
+# MySql-clinet
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
 # ----- shell 工具 start -----
 # atuin(shell 历史记录写入sqlite)
 eval "$(atuin init zsh --disable-up-arrow)"
