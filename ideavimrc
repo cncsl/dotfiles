@@ -44,6 +44,7 @@ nmap <leader>lr <Action>(RenameElement)
 nmap <leader>gt <Action>(ActivateCommitToolWindow)
 nmap <leader>gC <Action>(Vcs.ShowTabbedFileHistory)
 nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
+nmap <leader>gR <Action>(ChangesView.Revert)
 nmap <leader>gl <Action>(Annotate)
 
 "" tabs (buffers in AstroNvim)
@@ -72,6 +73,14 @@ nmap <leader>nh :nohlsearch<CR>
 Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
+" matchit.vim
+Plug 'vim-matchit'
+" NERDTree
+Plug 'preservim/nerdtree'
+nmap <leader>e :NERDTree<CR>
+nmap <leader>o :NERDTreeToggle<CR>
+" surround
+Plug "tpope/vim-surround"
 
 " 输入法切换
 set keep-english-in-normal-and-restore-in-insert
