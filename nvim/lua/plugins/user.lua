@@ -82,4 +82,14 @@ return {
       }
     end,
   },
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      vim.notify = function(msg, ...)
+        -- temporarily block notifications of vtls inlayHint exception
+        if string.match(msg, "(vtsls: %-32603)") then return end
+        require "notify"(msg, ...)
+      end
+    end,
+  },
 }
