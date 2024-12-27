@@ -75,7 +75,6 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    z
     tmux
     zsh-syntax-highlighting
     iterm2
