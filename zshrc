@@ -145,6 +145,9 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # ----- shell 工具 end -----
+# zoxide
+eval "$(zoxide init zsh)"
+eval 
 
 # 工作
 source "$HOME/work/config/.zshrc_work" 
