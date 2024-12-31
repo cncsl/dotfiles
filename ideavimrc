@@ -48,8 +48,8 @@ nmap <leader>gR <Action>(ChangesView.Revert)
 nmap <leader>gl <Action>(Annotate)
 
 "" tabs (buffers in AstroNvim)
-nmap H <Action>(PreviousTab)
-nmap L <Action>(NextTab)
+nmap [b <Action>(PreviousTab)
+nmap ]b <Action>(NextTab)
 nmap <leader>bc <Action>(CloseAllEditorsButActive)
 nmap <leader>bC <Action>(CloseAllEditors)
 
@@ -83,5 +83,4 @@ nmap <leader>o :NERDTreeToggle<CR>
 Plug "tpope/vim-surround"
 
 " 输入法切换
-set keep-english-in-normal-and-restore-in-insert
-
+set keep-english-in-normal
