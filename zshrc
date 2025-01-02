@@ -1,17 +1,14 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="dracula/dracula"
-
-DRACULA_DISPLAY_CONTEXT=1
-DRACULA_DISPLAY_FULL_CWD=1
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -91,14 +88,23 @@ setopt no_nomatch
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-export EDITOR='nvim'
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
@@ -127,9 +133,6 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export RUBY_HOME="/usr/local/opt/ruby"
 export PATH="$RUBY_HOME/bin:$PATH" # ruby
 export PATH="/usr/local/lib/ruby/gems/3.3.0/bin:$PATH" # runnable binaries installed by gem
-# 暂时不知道改这两个有啥影响
-# export LDFLAGS="-L/usr/local/opt/ruby/lib"
-# export CPPFLAGS="-L/usr/local/opt/ruby/include"
 
 # Flutter
 export FLUTTER_HOME="$HOME/develop/flutter"
@@ -140,14 +143,24 @@ export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 # MySql-clinet
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-# ----- shell 工具 start -----
 # atuin(shell 历史记录写入sqlite)
 eval "$(atuin init zsh --disable-up-arrow)"
 
-# ----- shell 工具 end -----
+# yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # zoxide
 eval "$(zoxide init zsh)"
-eval 
 
 # 工作
 source "$HOME/work/config/.zshrc_work" 
+
+# starship 需要在最后
+eval "$(starship init zsh)"
