@@ -29,9 +29,11 @@ nmap <leader>fw <Action>(FindInPath)
 nmap <leader>fb <Action>(Switcher)
 
 "" code jump
-nmap gr <Action>(FindUsages)
-nmap gi <Action>(GotoImplementation)
+nmap gd <Action>(GotoSuperMethod)
+nmap gD <Action>(GotoDeclaration)
 nmap gy <Action>(GotoTypeDeclaration)
+nmap gI <Action>(GotoImplementation)
+nmap grr <Action>(FindUsages)
 nmap <leader>lR <Action>(FindUsages)
 
 nmap <leader>/ <Action>(CommentByLineComment)
