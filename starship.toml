@@ -17,3 +17,20 @@ pink = "#ff79c6"
 purple = "#bd93f9"
 red = "#ff5555"
 yellow = "#f1fa8c"
+
+[package]
+disabled = true
+
+[java]
+symbol = " "
+style = "red"
+version_format = "v${major}"
+format = "[${symbol}(${version})]($style)"
+
+[nodejs]
+version_format = "v${major}"
+format = "[${symbol}(${version})]($style)"
+
+[dart]
+version_format = "v${major}"
+format = "[${symbol}(${version})]($style)"
