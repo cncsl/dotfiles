@@ -25,12 +25,12 @@ disabled = true
 symbol = " "
 style = "red"
 version_format = "v${major}"
-format = "[${symbol}(${version})]($style)"
+format = "[${symbol}(${version} )]($style)"
 
 [nodejs]
 version_format = "v${major}"
-format = "[${symbol}(${version})]($style)"
+format = "[${symbol}(${version} )]($style)"
 
 [dart]
 version_format = "v${major}"
-format = "[${symbol}(${version})]($style)"
+format = "[${symbol}(${version} )]($style)"
