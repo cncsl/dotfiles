@@ -28,6 +28,7 @@ nmap <leader>fr <Action>(RecentFiles)
 nmap <leader>fw <Action>(FindInPath)
 nmap <leader>fb <Action>(Switcher)
 
+
 "" code jump
 nmap gd <Action>(GotoSuperMethod)
 nmap gD <Action>(GotoDeclaration)
@@ -49,11 +50,20 @@ nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 nmap <leader>gR <Action>(ChangesView.Revert)
 nmap <leader>gl <Action>(Annotate)
 
-"" tabs (buffers in AstroNvim)
+"" tabs
 nmap [b <Action>(PreviousTab)
 nmap ]b <Action>(NextTab)
 nmap <leader>bc <Action>(CloseAllEditorsButActive)
 nmap <leader>bC <Action>(CloseAllEditors)
+
+"" panels
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+nmap <C-k> <C-w>k
+nmap <C-j> <C-w>j
+
+nmap _ <Action>(SplitHorizontally)
+nmap <Bar> <Action>(SplitVertically)
 
 "" debug
 nmap <leader>dc <Action>(Debug)
