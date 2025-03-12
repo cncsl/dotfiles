@@ -51,23 +51,20 @@ return {
         -- ["<Leader>b"] = { desc = "Buffers" },
 
         -- unlike default configuration, there mappings action are not "force"
-        ["<C-s>"] = { ":w<cr>", desc = "Fast Save" },
-        ["<C-q>"] = { ":q<cr>", desc = "Fast Quit" },
-        ["<C-x>"] = { ":wq<cr>", desc = "Fast Save And Quit" },
+        ["<C-s>"] = { "<Cmd>w<CR>", desc = "Fast Save" },
+        ["<C-q>"] = { "<Cmd>q<CR>", desc = "Fast Quit" },
+        ["<C-x>"] = { "<Cmd>wq<CR>", desc = "Fast Save And Quit" },
 
         -- quickly resize split
-        ["<M-h>"] = { function() require("smart-splits").resize_left() end,
-          desc = "Resize split left",
-        },
-        ["<M-j>"] = { function() require("smart-splits").resize_down() end,
-          desc = "Resize split down",
-        },
-        ["<M-k>"] = { function() require("smart-splits").resize_up() end,
-          desc = "Resize split up",
-        },
-        ["<M-l>"] = { function() require("smart-splits").resize_right() end,
-          desc = "Resize split right",
-        },
+        ["<M-h>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left", },
+        ["<M-j>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down", },
+        ["<M-k>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up", },
+        ["<M-l>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right", },
+
+        -- split
+        ["_"] = { "<Cmd>split<CR>", desc = "Horizontal Split" },
+        ["|"] = { "<Cmd>vsplit<CR>", desc = "Vertical Split" },
+
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
