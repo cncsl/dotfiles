@@ -111,6 +111,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export WORKSPACE_VOLUMES="/Volumes/workspace"
+export MY_WORKSPACE="$WORKSPACE_VOLUMES/cncsl"
+
 # iterm2
 zstyle :omz:plugins:iterm2 shell-integration yes
 
@@ -126,7 +129,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Java
-export JAVA_HOME="$HOME/develop/graalvm-jdk-17.0.13+10.1/Contents/Home"
+export JAVA_HOME="$WORKSPACE_VOLUMES/develop/Java/graalvm-jdk-17.0.13+10.1/Contents/Home"
 export PATH="$JAVA_HOME/bin:$PATH"
 
 # Ruby
@@ -135,7 +138,7 @@ export PATH="$RUBY_HOME/bin:$PATH" # ruby
 export PATH="/usr/local/lib/ruby/gems/3.3.0/bin:$PATH" # runnable binaries installed by gem
 
 # Flutter
-export FLUTTER_HOME="$HOME/develop/flutter"
+export FLUTTER_HOME="$WORKSPACE_VOLUMES/develop/flutter"
 export PATH="$FLUTTER_HOME/bin:$PATH"
 export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub;
 export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
@@ -160,7 +163,7 @@ function y() {
 eval "$(zoxide init zsh)"
 
 # 工作
-source "$HOME/work/config/.zshrc_work" 
+source "$WORKSPACE_VOLUMES/work/config/.zshrc_work" 
 
 # starship 需要在最后
 eval "$(starship init zsh)"

@@ -13,5 +13,5 @@
 [http "https://github.com"]
 	proxy = socks5://127.0.0.1:8119
 
-[includeIf "gitdir:~/work/work_codes/"]
-  path = ~/work/config/gitconfig
+[includeIf "gitdir:/Volumes/workspace/work/work_codes/"]
+  path = /Volumes/workspace/work/config/gitconfig
