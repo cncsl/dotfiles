@@ -73,6 +73,7 @@ CASE_SENSITIVE="true"
 plugins=(
     git
     tmux
+    zoxide
     zsh-syntax-highlighting
     iterm2
     macos
@@ -158,9 +159,6 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
-
-# zoxide
-eval "$(zoxide init zsh)"
 
 # 工作
 source "$WORKSPACE_VOLUMES/work/config/.zshrc_work" 
