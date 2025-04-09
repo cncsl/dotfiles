@@ -28,20 +28,25 @@ nmap <leader>fr <Action>(RecentFiles)
 nmap <leader>fw <Action>(FindInPath)
 nmap <leader>fb <Action>(Switcher)
 
-
 "" code jump
 nmap gd <Action>(GotoSuperMethod)
 nmap gD <Action>(GotoDeclaration)
 nmap gy <Action>(GotoTypeDeclaration)
-nmap gI <Action>(GotoImplementation)
+nmap gri <Action>(GotoImplementation)
 nmap grr <Action>(FindUsages)
 nmap <leader>lR <Action>(FindUsages)
 
+"" editing
 nmap <leader>/ <Action>(CommentByLineComment)
 vmap <leader>/ <Action>(CommentByLineComment)<ESC>
+nmap gco o<Action>(CommentByLineComment)<ESC>
+nmap gcO O<Action>(CommentByLineComment)<ESC>
+
 nmap <leader>lf <Action>(ReformatCode)
 vmap <leader>lf <Action>(ReformatCode)<ESC>
 nmap <leader>lr <Action>(RenameElement)
+
+nmap K <Action>(ShowHoverInfo)
 
 "" git operation
 nmap <leader>gt <Action>(ActivateCommitToolWindow)
@@ -55,6 +60,7 @@ nmap [b <Action>(PreviousTab)
 nmap ]b <Action>(NextTab)
 nmap <leader>bc <Action>(CloseAllEditorsButActive)
 nmap <leader>bC <Action>(CloseAllEditors)
+nmap <leader>c <Action>(CloseContent)
 
 "" panels
 nmap <C-h> <C-w>h
@@ -63,6 +69,7 @@ nmap <C-k> <C-w>k
 nmap <C-j> <C-w>j
 
 nmap _ <Action>(SplitHorizontally)
+"" <Bar> is actually |
 nmap <Bar> <Action>(SplitVertically)
 
 "" debug
