@@ -1,6 +1,3 @@
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- Here are some examples:
-
 ---@type LazySpec
 return {
   {
@@ -38,25 +35,6 @@ return {
     },
   },
   {
-    "hrsh7th/nvim-cmp",
-    config = function(plugin, opts)
-      local cmp = require "cmp"
-      -- disable path source
-      opts.sources = opts.sources or {}
-      for i, source in ipairs(opts.sources) do
-        if source.name == "path" then
-          table.remove(opts.sources, i)
-          break
-        end
-      end
-      -- auto select first item
-      opts.completion = opts.completion or {}
-      opts.completion["completeopt"] = "menu,menuone,preview,noinsert"
-      -- run cmp setup
-      cmp.setup(opts)
-    end,
-  },
-  {
     {
       "wakatime/vim-wakatime",
       lazy = false,
@@ -81,16 +59,6 @@ return {
         -- Async run `default_command` to switch IM or not
         async_switch_im = true,
       }
-    end,
-  },
-  {
-    "rcarriga/nvim-notify",
-    config = function()
-      vim.notify = function(msg, ...)
-        -- temporarily block notifications of vtls inlayHint exception
-        if string.match(msg, "(vtsls: %-32603)") then return end
-        require "notify"(msg, ...)
-      end
     end,
   },
 }
