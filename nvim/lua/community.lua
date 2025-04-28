@@ -9,7 +9,7 @@ return {
   { import = "astrocommunity.editing-support.auto-save-nvim"},
   { import = "astrocommunity.motion.nvim-surround"},
   --theme
-  { import = "astrocommunity.colorscheme.dracula-nvim" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   --ui/ux
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
