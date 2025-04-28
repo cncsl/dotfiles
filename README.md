@@ -10,8 +10,6 @@ It's only a backup for myself, please do not execute the following command direc
 ln -s $(pwd)/zshrc $HOME/.zshrc
 
 #------------- shell -------------
-mkdir -p $HOME/.config/tmux/
-ln -s $(pwd)/tmux.conf $HOME/.config/tmux/tmux.conf
 ln -s $(pwd)/yazi $HOME/.config/yazi
 ln -s $(pwd)/starship.toml $HOME/.config/starship.toml
 mkdir -p $HOME/.config/atuin/
@@ -47,9 +45,8 @@ ln -s $(pwd)/lang/ruby/gemrc $HOME/.config/gemrc
 
 ## shell utils
 
-- https://iterm2.com/
+- https://wezterm.org/
 - https://github.com/ohmyzsh/ohmyzsh
-- https://github.com/tmux/tmux
 - https://yazi-rs.github.io/
 - https://starship.rs/
 - https://atuin.sh/
@@ -67,4 +64,4 @@ ln -s $(pwd)/lang/ruby/gemrc $HOME/.config/gemrc
 
 ## colorschema
 
-- https://draculatheme.com/
+- https://github.com/folke/tokyonight.nvim
