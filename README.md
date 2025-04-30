@@ -14,6 +14,8 @@ ln -s $(pwd)/yazi $HOME/.config/yazi
 ln -s $(pwd)/starship.toml $HOME/.config/starship.toml
 mkdir -p $HOME/.config/atuin/
 ln -s $(pwd)/atuin_config.toml $HOME/.config/atuin/config.toml
+mkdir -p $HOME/.config
+ln -s $(pwd)/wezterm $HOME/.config/wezterm
 
 #------------ editors ------------
 mkdir -p $HOME/.config/nvim/
