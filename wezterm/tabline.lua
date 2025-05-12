@@ -4,9 +4,6 @@ local act = wezterm.action
 local M = {}
 
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
-local scheme = wezterm.get_builtin_color_schemes()["Tokyo Night Storm"]
-local ansi = scheme.ansi
-local brights = scheme.brights
 
 function M.apply_to_config(config)
   tabline.setup({
