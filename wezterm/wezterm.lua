@@ -21,6 +21,7 @@ config.color_scheme = "Tokyo Night Storm"
 --- font
 config.font_size = 18
 config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Regular" })
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 require("tabline").apply_to_config(config)
 require("multiplexing").apply_to_config(config)
