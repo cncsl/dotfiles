@@ -29,7 +29,7 @@ require("multiplexing").apply_to_config(config)
 --- Copy Mode
 config.keys = config.keys or {}
 table.insert(config.keys, {
-  key = "y",
+  key = "v",
   mods = "LEADER",
   action = wezterm.action.ActivateCopyMode,
 })
