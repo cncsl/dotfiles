@@ -13,6 +13,7 @@ set showmode
 " search
 set hlsearch
 set incsearch
+set ignorecase
 set smartcase
 
 " system clipboard
