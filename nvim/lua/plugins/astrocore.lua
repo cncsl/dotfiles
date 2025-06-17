@@ -73,6 +73,9 @@ return {
           desc = "Close buffer from tabline",
         },
 
+        -- Toggle Git Status Explorer
+        ["<Leader>ge"] = { "<Cmd>Neotree toggle git_status<CR>", desc = "Toggle Git Status Explorer" },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
@@ -83,15 +86,14 @@ return {
         ["<C-x>"] = { "<Cmd>wq<CR>", desc = "Fast Save And Quit" },
 
         -- quickly resize split
-        ["<M-h>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left", },
-        ["<M-j>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down", },
-        ["<M-k>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up", },
-        ["<M-l>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right", },
+        ["<M-h>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" },
+        ["<M-j>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
+        ["<M-k>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" },
+        ["<M-l>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" },
 
         -- split
         ["_"] = { "<Cmd>split<CR>", desc = "Horizontal Split" },
         ["|"] = { "<Cmd>vsplit<CR>", desc = "Vertical Split" },
-
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
