@@ -13,9 +13,10 @@ return {
   --ui/ux
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
-  -- 暂时没有自定义需求的 pack
+  -- pack
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.markdown" },
 }
