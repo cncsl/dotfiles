@@ -1,11 +1,11 @@
 local wezterm = require("wezterm")
-local act = wezterm.action
 
 local M = {}
 
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 
 function M.apply_to_config(config)
+  config.hide_tab_bar_if_only_one_tab = true
   tabline.setup({
     options = {
       icons_enabled = true,
