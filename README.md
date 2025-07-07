@@ -12,8 +12,6 @@ ln -s $(pwd)/zshrc $HOME/.zshrc
 #------------- shell -------------
 ln -s $(pwd)/yazi $HOME/.config/yazi
 ln -s $(pwd)/starship.toml $HOME/.config/starship.toml
-mkdir -p $HOME/.config/atuin/
-ln -s $(pwd)/atuin_config.toml $HOME/.config/atuin/config.toml
 mkdir -p $HOME/.config
 ln -s $(pwd)/wezterm $HOME/.config/wezterm
 
@@ -40,7 +38,7 @@ ln -s $(pwd)/npmrc $HOME/.npmrc
 mkdir -p $HOME/.pip/
 ln -s $(pwd)/lang/python/pip.conf $HOME/.config/pip/pip.conf
 
-mkdir -p $HOME/.gitconfig/gem/
+mkdir -p $HOME/.config/gem/
 ln -s $(pwd)/lang/ruby/gemrc $HOME/.config/gemrc
 
 ```
@@ -51,7 +49,7 @@ ln -s $(pwd)/lang/ruby/gemrc $HOME/.config/gemrc
 - https://github.com/ohmyzsh/ohmyzsh
 - https://yazi-rs.github.io/
 - https://starship.rs/
-- https://atuin.sh/
+- https://github.com/junegunn/fzf
 
 ## editors
 
