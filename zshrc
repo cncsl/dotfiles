@@ -74,7 +74,6 @@ plugins=(
     git
     zoxide
     zsh-syntax-highlighting
-    iterm2
     macos
 )
 
@@ -114,9 +113,6 @@ fi
 export WORKSPACE_VOLUMES="/Volumes/workspace"
 export MY_WORKSPACE="$WORKSPACE_VOLUMES/cncsl"
 
-# iterm2
-zstyle :omz:plugins:iterm2 shell-integration yes
-
 # Homebrew
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git" 
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
@@ -146,8 +142,7 @@ export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 # MySql-clinet
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-# atuin(shell 历史记录写入sqlite)
-eval "$(atuin init zsh --disable-up-arrow)"
+source <(fzf --zsh)
 
 # yazi
 function y() {
