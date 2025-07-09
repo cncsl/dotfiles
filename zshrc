@@ -82,6 +82,29 @@ alias la='ls -lAh'
 alias grep='grep --color=auto'
 
 
+#---------- fzf ----------
+export FZF_DEFAULT_OPTS="--color=fg:#c0caf5,bg:#1a1b26,hl:#7aa2f7,fg+:#ffffff,bg+:#414868,hl+:#7dcfff,info:#7aa2f7,prompt:#bb9af7,pointer:#f7768e,marker:#9ece6a,spinner:#7dcfff,header:#565f89"
+export FZF_CTRL_T_OPTS="--preview 'fzf-preview.sh {}'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+source <(fzf --zsh)
+
+
+#---------- yazi ----------
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+
+#---------- Shell Utils ----------
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+
+
 #---------- custom ----------
 export XDG_CONFIG_HOME="$HOME/.config"
 export LANG=en_US.UTF-8
@@ -126,20 +149,6 @@ export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 
-# yazi
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
 # 工作
 source "$WORKSPACE_VOLUMES/work/config/.zshrc_work"
 
-#---------- Shell Utils ----------
-source <(fzf --zsh)
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
