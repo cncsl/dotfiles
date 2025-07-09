@@ -95,6 +95,9 @@ export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
 export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 
+export WORKSPACE_VOLUMES="/Volumes/workspace"
+export MY_WORKSPACE="$WORKSPACE_VOLUMES/cncsl"
+
 #--------- nvm ----------
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -133,9 +136,6 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-
-export WORKSPACE_VOLUMES="/Volumes/workspace"
-export MY_WORKSPACE="$WORKSPACE_VOLUMES/cncsl"
 # 工作
 source "$WORKSPACE_VOLUMES/work/config/.zshrc_work"
 
