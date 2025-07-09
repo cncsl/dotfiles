@@ -1,19 +1,64 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+format = """
+[ ](bg:#a3aed2 fg:#090c0c)\
+[](bg:#769ff0 fg:#a3aed2)\
+$directory\
+[](fg:#769ff0 bg:#394260)\
+$git_branch\
+[](fg:#394260 bg:#212736)\
+$git_state\
+$git_status\
+$java\
+$nodejs\
+$dart\
+\n$character"""
+
+
+[directory]
+style = "fg:#e3e5e5 bg:#769ff0"
+format = "[ $path ]($style)"
+
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+
+[git_status]
+conflicted = "[󰹳${count}](red)"
+ahead = "[󰁝${count}](green)"
+behind = "[󰁅${count}](yellow)"
+diverged = "[󰹹](bold yellow)"
+untracked = "[?${count}](cyan)"
+stashed = "[$$${count}](blue)"
+modified = "[!${count}](magenta)"
+staged = "[+${count}](green)"
+renamed = "[󱞩${count}](cyan)"
+deleted = "[󰅖${count}](red)"
+format = '[ $all_status$ahead_behind ]($style)'
+
+
+[character]
+success_symbol = "[❯](fg:green)"
+error_symbol = "[](fg:red)"
+
+
 [package]
 disabled = true
 
 [java]
-symbol = " "
-style = "red"
+symbol = ""
 version_format = "v${major}"
-format = "[${symbol}(${version} )]($style)"
+format = '[[ ${symbol} (${version}) ](fg:#769ff0)]($style)'
 
 [nodejs]
+symbol = "󰎙"
 version_format = "v${major}"
-format = "[${symbol}(${version} )]($style)"
+format = '[[ ${symbol} (${version}) ](fg:#769ff0)]($style)'
 
 [dart]
+symbol = ""
 version_format = "v${major}"
-format = "[${symbol}(${version} )]($style)"
+format = '[[ ${symbol} (${version}) ](fg:#769ff0)]($style)'
