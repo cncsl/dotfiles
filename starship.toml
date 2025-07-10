@@ -2,12 +2,12 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[ ](bg:#a3aed2 fg:#090c0c)\
-[](bg:#769ff0 fg:#a3aed2)\
+[ ](bg:foreground fg:black)\
+[](bg:blue fg:foreground)\
 $directory\
-[](fg:#769ff0 bg:#394260)\
+[](fg:blue bg:black)\
 $git_branch\
-[](fg:#394260 bg:#212736)\
+[](fg:black bg:background)\
 $git_state\
 $git_status\
 $java\
@@ -15,16 +15,18 @@ $nodejs\
 $dart\
 \n$character"""
 
+palette = "tokyonight_storm"
+
 
 [directory]
-style = "fg:#e3e5e5 bg:#769ff0"
+style = "fg:#e3e5e5 bg:blue"
 format = "[ $path ]($style)"
 
 
 [git_branch]
 symbol = ""
-style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+style = "bg:background"
+format = '[[ $symbol $branch ](fg:blue bg:black)]($style)'
 
 [git_status]
 conflicted = "[󰹳${count}](red)"
@@ -37,7 +39,7 @@ modified = "[!${count}](magenta)"
 staged = "[+${count}](green)"
 renamed = "[󱞩${count}](cyan)"
 deleted = "[󰅖${count}](red)"
-format = '[ $all_status$ahead_behind ]($style)'
+format = '[ $all_status$ahead_behind]($style)'
 
 
 [character]
@@ -51,14 +53,26 @@ disabled = true
 [java]
 symbol = ""
 version_format = "v${major}"
-format = '[[ ${symbol} (${version}) ](fg:#769ff0)]($style)'
+format = '[[ ${symbol} (${version}) ](fg:blue)]($style)'
 
 [nodejs]
 symbol = "󰎙"
 version_format = "v${major}"
-format = '[[ ${symbol} (${version}) ](fg:#769ff0)]($style)'
+format = '[[ ${symbol} (${version}) ](fg:blue)]($style)'
 
 [dart]
 symbol = ""
 version_format = "v${major}"
-format = '[[ ${symbol} (${version}) ](fg:#769ff0)]($style)'
+format = '[[ ${symbol} (${version}) ](fg:blue)]($style)'
+
+[palettes.tokyonight_storm]
+black = "#414868"
+red = "#F7768E"
+green = "#9ECE6A"
+yellow = "#E0AF68"
+blue = "#7AA2F7"
+magenta = "#BB9AF7"
+cyan = "#7DCFFF"
+white = "#C0CAF5"
+foreground = "#c0caf5"
+background = "#24283b"
