@@ -83,7 +83,28 @@ alias grep='grep --color=auto'
 
 
 #---------- fzf ----------
-export FZF_DEFAULT_OPTS="--color=fg:#c0caf5,bg:#1a1b26,hl:#7aa2f7,fg+:#ffffff,bg+:#414868,hl+:#7dcfff,info:#7aa2f7,prompt:#bb9af7,pointer:#f7768e,marker:#9ece6a,spinner:#7dcfff,header:#565f89"
+export FZF_DEFAULT_OPTS=" --highlight-line \
+  --info=inline-right \
+  --ansi \
+  --layout=reverse \
+  --border=none \
+  --color=bg+:#2e3c64 \
+  --color=bg:#1f2335 \
+  --color=border:#29a4bd \
+  --color=fg:#c0caf5 \
+  --color=gutter:#1f2335 \
+  --color=header:#ff9e64 \
+  --color=hl+:#2ac3de \
+  --color=hl:#2ac3de \
+  --color=info:#545c7e \
+  --color=marker:#ff007c \
+  --color=pointer:#ff007c \
+  --color=prompt:#2ac3de \
+  --color=query:#c0caf5:regular \
+  --color=scrollbar:#29a4bd \
+  --color=separator:#ff9e64 \
+  --color=spinner:#ff007c \
+"
 export FZF_CTRL_T_OPTS="--preview 'fzf-preview.sh {}'"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 source <(fzf --zsh)
