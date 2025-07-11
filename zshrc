@@ -16,10 +16,13 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 
 #---------- zsh ----------
-setopt auto_cd
-
+setopt auto_cd 
 setopt long_list_jobs
 setopt interactivecomments
+# use editor to edit long command
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
 
 #---------- zsh completion ----------
 setopt auto_menu
