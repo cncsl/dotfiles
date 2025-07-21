@@ -1,3 +1,7 @@
+git:
+  paging:
+    externalDiffCommand: difft --color=always
+
 gui:
 
   skipDiscardChangeWarning: true
