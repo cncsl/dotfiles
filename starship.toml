@@ -1,13 +1,9 @@
 # Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
 format = """
-[ ](bg:foreground fg:black)\
-[](bg:blue fg:foreground)\
 $directory\
-[](fg:blue bg:black)\
 $git_branch\
-[](fg:black bg:background)\
 $git_state\
 $git_status\
 $java\
@@ -19,14 +15,19 @@ palette = "tokyonight_storm"
 
 
 [directory]
+truncation_length = 3
+truncate_to_repo = false
 style = "fg:#e3e5e5 bg:blue"
-format = "[ $path ]($style)"
+format = "[ $path ]($style)[](fg:blue)"
+repo_root_style = ""
+repo_root_format = "[ $before_root_path$repo_root$path ]($style)[$read_only]($read_only_style)[](fg:blue bg:black)"
 
 
 [git_branch]
 symbol = ""
 style = "bg:background"
-format = '[[ $symbol $branch ](fg:blue bg:black)]($style)'
+format = "[[ $symbol $branch ](fg:blue bg:black)]($style)[](fg:black)"
+
 
 [git_status]
 conflicted = "[󰹳${count}](red)"
@@ -39,7 +40,7 @@ modified = "[!${count}](magenta)"
 staged = "[+${count}](green)"
 renamed = "[󱞩${count}](cyan)"
 deleted = "[󰅖${count}](red)"
-format = '[ $all_status$ahead_behind]($style)'
+format = "[ $all_status$ahead_behind]($style)"
 
 
 [character]
@@ -53,17 +54,17 @@ disabled = true
 [java]
 symbol = ""
 version_format = "v${major}"
-format = '[[ ${symbol} (${version}) ](fg:blue)]($style)'
+format = "[[ ${symbol} (${version}) ](fg:blue)]($style)"
 
 [nodejs]
 symbol = "󰎙"
 version_format = "v${major}"
-format = '[[ ${symbol} (${version}) ](fg:blue)]($style)'
+format = "[[ ${symbol} (${version}) ](fg:blue)]($style)"
 
 [dart]
 symbol = ""
 version_format = "v${major}"
-format = '[[ ${symbol} (${version}) ](fg:blue)]($style)'
+format = "[[ ${symbol} (${version}) ](fg:blue)]($style)"
 
 [palettes.tokyonight_storm]
 black = "#414868"
