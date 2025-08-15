@@ -9,6 +9,7 @@ set autoindent
 set number
 set showcmd
 set showmode
+nmap <leader>uw <Action>(EditorToggleUseSoftWraps)
 
 " search
 set hlsearch
