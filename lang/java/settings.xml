@@ -158,15 +158,6 @@ under the License.
       <url>http://my.repository.com/repo/path</url>
     </mirror>
      -->
-
-    <mirror>
-        <id>aliyunmaven</id>
-        <mirrorOf>*</mirrorOf>
-        <name>aliyunmaven</name>
-        <url>https://maven.aliyun.com/repository/public</url>
-    </mirror>
-
-
   </mirrors>
 
 
@@ -256,6 +247,22 @@ under the License.
       </properties>
     </profile>
     -->
+    <profile>
+      <id>aliyun</id>
+      <repositories>
+        <repository>
+          <id>aliyunmaven</id>
+          <name>阿里云公共仓库</name>
+          <url>https://maven.aliyun.com/repository/public</url>
+          <releases>
+            <enable>true</enable>
+          </releases>
+          <snapshots>
+            <enable>true</enable>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
   </profiles>
 
   <!-- activeProfiles
