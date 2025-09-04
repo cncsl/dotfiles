@@ -252,13 +252,9 @@ under the License.
       <repositories>
         <repository>
           <id>aliyunmaven</id>
-          <name>阿里云公共仓库</name>
           <url>https://maven.aliyun.com/repository/public</url>
-          <releases>
-            <enable>true</enable>
-          </releases>
           <snapshots>
-            <enable>true</enable>
+            <enabled>true</enabled>
           </snapshots>
         </repository>
       </repositories>
