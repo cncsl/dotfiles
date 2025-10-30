@@ -136,6 +136,7 @@ export EDITOR='nvim'
 
 
 #---------- Homebrew ----------
+eval "$(brew shellenv)"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git" 
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
@@ -146,27 +147,46 @@ export WORKSPACE_VOLUMES="/Volumes/workspace"
 export MY_WORKSPACE="$WORKSPACE_VOLUMES/cncsl"
 
 #--------- nvm ----------
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.config/nvm"
+if [ -d "$NVM_DIR" ]; then
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+else
+  echo "nvm is not installed yet"
+fi
 
 
 #---------- Java ----------
-export JAVA_HOME="$WORKSPACE_VOLUMES/develop/Java/graalvm-jdk-17.0.13+10.1/Contents/Home"
-export PATH="$JAVA_HOME/bin:$PATH"
-
-
-#---------- Ruby ----------
-export RUBY_HOME="/usr/local/opt/ruby"
-export PATH="$RUBY_HOME/bin:$PATH" # ruby
-export PATH="/usr/local/lib/ruby/gems/3.3.0/bin:$PATH" # runnable binaries installed by gem
+if [ -d "$WORKSPACE_VOLUMES/develop/Java/graalvm-jdk-17.0.12+8.1/Contents/Home" ]; then
+  export JAVA_HOME="$WORKSPACE_VOLUMES/develop/Java/graalvm-jdk-17.0.12+8.1/Contents/Home"
+  export PATH="$JAVA_HOME/bin:$PATH"
+else
+  echo "JDK is not installed yet"
+fi
+if [ -d "$WORKSPACE_VOLUMES/develop/Java/apache-maven-3.9.11" ]; then
+  export PATH="$WORKSPACE_VOLUMES/develop/Java/apache-maven-3.9.11/bin:$PATH"
+else
+  echo "maven is not installed yet"
+fi
 
 
 #---------- Flutter ----------
 export FLUTTER_HOME="$WORKSPACE_VOLUMES/develop/flutter"
-export PATH="$FLUTTER_HOME/bin:$PATH"
-export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub;
-export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
+if [ -d "$FLUTTER_HOME" ]; then
+  export PATH="$FLUTTER_HOME/bin:$PATH"
+  export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub;
+  export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
+else
+  echo "Flutter is not installed yet"
+fi
+
+#---------- docker ----------
+if command -v docker >/dev/null 2>&1; then
+  fpath=("$HOME/.docker/completions" $fpath)
+  autoload -Uz compinit && compinit
+else
+  echo "docker server is not installed yet"
+fi
 
 
 #---------- MySql-clinet ----------
@@ -174,5 +194,6 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 
 # 工作
-source "$WORKSPACE_VOLUMES/work/config/.zshrc_work"
-
+if [ -e "$WORKSPACE_VOLUMES/work/config/.zshrc_work" ]; then
+  source "$WORKSPACE_VOLUMES/work/config/.zshrc_work"
+fi

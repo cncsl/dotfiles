@@ -22,7 +22,7 @@ config.color_scheme = "Tokyo Night Storm"
 config.font_size = 18
 config.font = wezterm.font_with_fallback({
   "JetBrainsMono Nerd Font Mono", -- 英文 & Nerd 图标
-  "LXGW Neo XiHei",          -- 中文（霞鹜新晰黑）
+  "LXGW Neo XiHei Plus",          -- 中文（霞鹜新晰黑）
 })
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
