@@ -6,7 +6,6 @@
 return {
   "AstroNvim/astrocommunity",
   --editor
-  { import = "astrocommunity.editing-support.auto-save-nvim"},
   { import = "astrocommunity.motion.nvim-surround"},
   --theme
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
