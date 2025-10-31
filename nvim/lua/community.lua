@@ -19,5 +19,10 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.markdown" },
+  -- vue
+  { import = "astrocommunity.pack.eslint" },
+  { import = "astrocommunity.pack.prettier" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.vue" },
 }
