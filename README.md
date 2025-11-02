@@ -50,10 +50,11 @@ It's only a backup for myself, please do not execute the following command direc
 ```shell
 ln -s $(pwd)/zshrc $HOME/.zshrc
 
+mkdir -p $HOME/.config
+
 #------------- shell -------------
 ln -s $(pwd)/yazi $HOME/.config/yazi
 ln -s $(pwd)/starship.toml $HOME/.config/starship.toml
-mkdir -p $HOME/.config
 ln -s $(pwd)/wezterm $HOME/.config/wezterm
 
 #------------ editors ------------
@@ -83,7 +84,4 @@ ln -s $(pwd)/npmrc $HOME/.npmrc
 
 mkdir -p "$HOME/.pip/"
 ln -s $(pwd)/lang/python/pip.conf $HOME/.config/pip/pip.conf
-
-mkdir -p "$HOME/.config/gem/"
-ln -s $(pwd)/lang/ruby/gemrc $HOME/.config/gemrc
 ```
