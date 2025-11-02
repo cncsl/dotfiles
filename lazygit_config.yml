@@ -1,14 +1,10 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 git:
-  paging:
-    externalDiffCommand: difft --color=always
-
+  pagers:
+    - externalDiffCommand: difft --color=always
 gui:
-
   skipDiscardChangeWarning: true
-
   nerdFontsVersion: "3"
-
   theme:
     activeBorderColor:
       - "#ff9e64"
