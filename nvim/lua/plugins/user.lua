@@ -68,8 +68,8 @@ return {
       enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
       trigger_events = {
         immediate_save = { "BufLeave", "FocusLost", "QuitPre", "VimSuspend" },
-        defer_save = { "InsertLeave" },
-        cancel_deferred_save = { "InsertEnter" },
+        defer_save = { },
+        cancel_deferred_save = { },
       },
     },
     dependencies = {
