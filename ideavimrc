@@ -23,6 +23,9 @@ set clipboard+=unnamed
 let mapleader=" "
 let g:mapleader=" "
 
+" idea
+set ideajoin
+
 "" find
 nmap <leader>fa <Action>(SearchEverywhere)
 nmap <leader>ff <Action>(GotoFile)
@@ -37,6 +40,8 @@ nmap gy <Action>(GotoTypeDeclaration)
 nmap gri <Action>(GotoImplementation)
 nmap grr <Action>(FindUsages)
 nmap <leader>lR <Action>(FindUsages)
+nmap [e <Action>(GotoPreviousError)
+nmap ]e <Action>(GotoNextError)
 
 "" editing
 nmap <leader>/ <Action>(CommentByLineComment)
@@ -109,3 +114,4 @@ Plug "tpope/vim-surround"
 
 " 输入法切换
 set keep-english-in-normal
+
