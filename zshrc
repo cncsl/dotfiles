@@ -41,12 +41,14 @@ fi
 
 #---------- zsh history ----------
 HISTFILE="$HOME/.zsh_history"
-HISTSIZE=50000
+HISTSIZE=10000
 SAVEHIST=10000
+HISTIGNORE="ls:ll:la:clear:exit:z"
 setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
+setopt hist_reduce_blanks
 setopt hist_verify
 setopt share_history
 
@@ -143,8 +145,10 @@ export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
 export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 
+#---------- workspace path ----------
 export WORKSPACE_VOLUMES="/Volumes/workspace"
 export MY_WORKSPACE="$WORKSPACE_VOLUMES/cncsl"
+
 
 #--------- nvm ----------
 export NVM_DIR="$HOME/.config/nvm"
