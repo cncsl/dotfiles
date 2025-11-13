@@ -43,7 +43,6 @@ fi
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
-HISTIGNORE="ls:ll:la:clear:exit:z"
 setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
@@ -110,7 +109,7 @@ export FZF_DEFAULT_OPTS=" --highlight-line \
   --color=separator:#ff9e64 \
   --color=spinner:#ff007c \
 "
-export FZF_CTRL_T_OPTS="--preview 'fzf-preview.sh {}'"
+export FZF_CTRL_T_OPTS="--walker-skip .git --preview 'fzf-preview.sh {}'"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 source <(fzf --zsh)
 
@@ -151,7 +150,7 @@ export MY_WORKSPACE="$WORKSPACE_VOLUMES/cncsl"
 
 
 #--------- nvm ----------
-export NVM_DIR="$HOME/.config/nvm"
+NVM_DIR="$HOME/.config/nvm"
 if [ -d "$NVM_DIR" ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -175,7 +174,7 @@ fi
 
 
 #---------- Flutter ----------
-export FLUTTER_HOME="$WORKSPACE_VOLUMES/develop/flutter"
+FLUTTER_HOME="$WORKSPACE_VOLUMES/develop/flutter"
 if [ -d "$FLUTTER_HOME" ]; then
   export PATH="$FLUTTER_HOME/bin:$PATH"
   export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub;
@@ -185,8 +184,9 @@ else
 fi
 
 #---------- docker ----------
-if command -v docker >/dev/null 2>&1; then
-  fpath=("$HOME/.docker/completions" $fpath)
+DOCKER_COMPLETIONS_PATH="$HOME/.docker/completions"
+if [ -d "$DOCKER_COMPLETIONS_PATH" ]; then
+  fpath=("$DOCKER_COMPLETIONS_PATH" $fpath)
   autoload -Uz compinit && compinit
 else
   echo "docker server is not installed yet"
