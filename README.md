@@ -84,4 +84,8 @@ ln -s $(pwd)/npmrc $HOME/.npmrc
 
 mkdir -p "$HOME/.pip/"
 ln -s $(pwd)/lang/python/pip.conf $HOME/.config/pip/pip.conf
+
+
+#----------- others -----------
+softwareupdate --install-rosetta
 ```
