@@ -109,8 +109,9 @@ export FZF_DEFAULT_OPTS=" --highlight-line \
   --color=separator:#ff9e64 \
   --color=spinner:#ff007c \
 "
-export FZF_CTRL_T_OPTS="--walker-skip .git --preview 'fzf-preview.sh {}'"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+export FZF_CTRL_T_OPTS="--walker-skip .git --bind='J:down' --bind='K:up' --preview 'fzf-preview.sh {}'"
+export FZF_CTRL_R_OPTS="--bind='J:down' --bind='K:up'"
+export FZF_ALT_C_OPTS=" --bind='J:down' --bind='K:up' --preview 'tree -C {} | head -200'"
 source <(fzf --zsh)
 
 
@@ -150,10 +151,10 @@ export MY_WORKSPACE="$WORKSPACE_VOLUMES/cncsl"
 
 
 #--------- nvm ----------
-NVM_DIR="$HOME/.config/nvm"
-if [ -d "$NVM_DIR" ]; then
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm_dir="$HOME/.config/nvm"
+if [ -d "$nvm_dir" ]; then
+  [ -s "$nvm_dir/nvm.sh" ] && \. "$nvm_dir/nvm.sh"  # This loads nvm
+  [ -s "$nvm_dir/bash_completion" ] && \. "$nvm_dir/bash_completion"  # This loads nvm bash_completion
 else
   echo "nvm is not installed yet"
 fi
@@ -174,9 +175,9 @@ fi
 
 
 #---------- Flutter ----------
-FLUTTER_HOME="$WORKSPACE_VOLUMES/develop/flutter"
-if [ -d "$FLUTTER_HOME" ]; then
-  export PATH="$FLUTTER_HOME/bin:$PATH"
+flutter_home="$WORKSPACE_VOLUMES/develop/flutter"
+if [ -d "$flutter_home" ]; then
+  export PATH="$flutter_home/bin:$PATH"
   export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub;
   export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
 else
@@ -184,9 +185,9 @@ else
 fi
 
 #---------- docker ----------
-DOCKER_COMPLETIONS_PATH="$HOME/.docker/completions"
-if [ -d "$DOCKER_COMPLETIONS_PATH" ]; then
-  fpath=("$DOCKER_COMPLETIONS_PATH" $fpath)
+docker_completions_path="$HOME/.docker/completions"
+if [ -d "$docker_completions_path" ]; then
+  fpath=("$docker_completions_path" $fpath)
   autoload -Uz compinit && compinit
 else
   echo "docker server is not installed yet"
