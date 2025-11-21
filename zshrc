@@ -194,11 +194,7 @@ else
 fi
 
 
-#---------- MySql-clinet ----------
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-
-
 # 工作
-if [ -e "$WORKSPACE_VOLUMES/work/config/.zshrc_work" ]; then
-  source "$WORKSPACE_VOLUMES/work/config/.zshrc_work"
+if [ -e "$WORKSPACE_VOLUMES/work/config/zshrc_work" ]; then
+  source "$WORKSPACE_VOLUMES/work/config/zshrc_work"
 fi
