@@ -160,12 +160,12 @@ else
 fi
 
 
-#---------- Java ----------
-if [ -d "$WORKSPACE_VOLUMES/develop/Java/graalvm-jdk-17.0.12+8.1/Contents/Home" ]; then
-  export JAVA_HOME="$WORKSPACE_VOLUMES/develop/Java/graalvm-jdk-17.0.12+8.1/Contents/Home"
-  export PATH="$JAVA_HOME/bin:$PATH"
+#---------- Java (sdkman and maven) ----------
+export SDKMAN_DIR="$HOME/.sdkman"
+if [ -d "$SDKMAN_DIR" ]; then
+  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 else
-  echo "JDK is not installed yet"
+  echo "sdkman is not installed yet"
 fi
 if [ -d "$WORKSPACE_VOLUMES/develop/Java/apache-maven-3.9.11" ]; then
   export PATH="$WORKSPACE_VOLUMES/develop/Java/apache-maven-3.9.11/bin:$PATH"
@@ -198,3 +198,4 @@ fi
 if [ -e "$WORKSPACE_VOLUMES/work/config/zshrc_work" ]; then
   source "$WORKSPACE_VOLUMES/work/config/zshrc_work"
 fi
+
