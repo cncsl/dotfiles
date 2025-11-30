@@ -80,7 +80,7 @@ return {
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
 
-        -- unlike default configuration, there mappings action are not "force"
+        -- quickly save and quit
         ["<C-s>"] = { "<Cmd>w<CR>", desc = "Fast Save" },
         ["<C-q>"] = { "<Cmd>q<CR>", desc = "Fast Quit" },
         ["<C-x>"] = { "<Cmd>wq<CR>", desc = "Fast Save And Quit" },
