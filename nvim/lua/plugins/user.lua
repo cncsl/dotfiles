@@ -68,8 +68,8 @@ return {
       enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
       trigger_events = {
         immediate_save = { "BufLeave", "FocusLost", "QuitPre", "VimSuspend" },
-        defer_save = { },
-        cancel_deferred_save = { },
+        defer_save = {},
+        cancel_deferred_save = {},
       },
     },
     dependencies = {
@@ -117,5 +117,9 @@ return {
         },
       },
     },
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets" },
   },
 }
