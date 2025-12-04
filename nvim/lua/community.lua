@@ -10,8 +10,10 @@ return {
   --theme
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   --ui/ux
+  { import = "astrocommunity.recipes.neovide" },
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+  { import = "astrocommunity.recipes.picker-lsp-mappings" },
   -- pack
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.yaml" },
