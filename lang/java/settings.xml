@@ -269,4 +269,7 @@ under the License.
     <activeProfile>anotherAlwaysActiveProfile</activeProfile>
   </activeProfiles>
   -->
+  <activeProfiles>
+    <activeProfile>aliyun</activeProfile>
+  </activeProfiles>
 </settings>
