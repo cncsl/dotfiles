@@ -14,6 +14,11 @@ autoload -Uz _zinit
 #---------- zsh plugin ----------
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
+zinit snippet OMZP::zoxide
+zinit snippet OMZP::sdk
+zinit snippet OMZP::nvm
+zinit snippet OMZP::docker
+zinit snippet OMZP::httpie/_httpie
 
 #---------- zsh ----------
 setopt auto_cd 
@@ -150,16 +155,6 @@ export WORKSPACE_VOLUMES="/Volumes/workspace"
 export MY_WORKSPACE="$WORKSPACE_VOLUMES/cncsl"
 
 
-#--------- nvm ----------
-nvm_dir="$HOME/.config/nvm"
-if [ -d "$nvm_dir" ]; then
-  [ -s "$nvm_dir/nvm.sh" ] && \. "$nvm_dir/nvm.sh"  # This loads nvm
-  [ -s "$nvm_dir/bash_completion" ] && \. "$nvm_dir/bash_completion"  # This loads nvm bash_completion
-else
-  echo "nvm is not installed yet"
-fi
-
-
 #---------- Java (sdkman and maven) ----------
 export SDKMAN_DIR="$HOME/.sdkman"
 if [ -d "$SDKMAN_DIR" ]; then
@@ -183,16 +178,6 @@ if [ -d "$flutter_home" ]; then
 else
   echo "Flutter is not installed yet"
 fi
-
-#---------- docker ----------
-docker_completions_path="$HOME/.docker/completions"
-if [ -d "$docker_completions_path" ]; then
-  fpath=("$docker_completions_path" $fpath)
-  autoload -Uz compinit && compinit
-else
-  echo "docker server is not installed yet"
-fi
-
 
 # 工作
 if [ -e "$WORKSPACE_VOLUMES/work/config/zshrc_work" ]; then
