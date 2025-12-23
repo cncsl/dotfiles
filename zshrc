@@ -18,7 +18,6 @@ zinit snippet OMZP::zoxide
 zinit snippet OMZP::sdk
 zinit snippet OMZP::nvm
 zinit snippet OMZP::docker
-zinit snippet OMZP::httpie/_httpie
 
 #---------- zsh ----------
 setopt auto_cd 
