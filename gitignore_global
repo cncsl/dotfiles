@@ -8,3 +8,7 @@
 
 # mac
 .DS_Store
+
+*.tar
+*.tar.gz
+*.tz
