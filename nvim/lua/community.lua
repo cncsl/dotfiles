@@ -23,7 +23,5 @@ return {
   -- vue
   { import = "astrocommunity.pack.eslint" },
   { import = "astrocommunity.pack.prettier" },
-  { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.vue" },
 }
