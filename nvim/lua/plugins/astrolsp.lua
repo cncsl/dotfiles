@@ -30,7 +30,7 @@ return {
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
-        "volar"
+        "volar",
       },
       timeout_ms = 3000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -73,6 +73,32 @@ return {
           desc = "Refresh codelens (buffer)",
           callback = function(args)
             if require("astrolsp").config.features.codelens then vim.lsp.codelens.refresh { bufnr = args.buf } end
+          end,
+        },
+      },
+      vue_smart_gs = {
+        cond = function(client) return client.name == "volar" or client.name == "vtsls" end,
+        {
+          -- 只在 LSP attach 后存在 implementation 能力时生效
+          event = "LspAttach",
+          desc = "Vue: smart gs (implementation > definition)",
+          callback = function(args)
+            local bufnr = args.buf
+            if vim.bo[bufnr].filetype ~= "vue" then return end
+
+            local function goto_impl_or_def()
+              local client = vim.lsp.get_clients({ bufnr = bufnr })
+              local params = vim.lsp.util.make_position_params(0, client[1].offset_encoding)
+              vim.lsp.buf_request(bufnr, "textDocument/implementation", params, function(_, result)
+                if result and not vim.tbl_isempty(result) then
+                  vim.lsp.util.show_document(result[1], { focus = true })
+                else
+                  vim.lsp.buf.definition()
+                end
+              end)
+            end
+
+            vim.keymap.set("n", "gri", goto_impl_or_def, { buffer = bufnr, desc = "Goto Implementation (Vue smart)" })
           end,
         },
       },
