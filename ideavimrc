@@ -40,8 +40,8 @@ nmap gy <Action>(GotoTypeDeclaration)
 nmap gri <Action>(GotoImplementation)
 nmap grr <Action>(FindUsages)
 nmap <leader>lR <Action>(FindUsages)
-nmap [e <Action>(GotoPreviousError)
-nmap ]e <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
 
 "" editing
 nmap <leader>/ <Action>(CommentByLineComment)
