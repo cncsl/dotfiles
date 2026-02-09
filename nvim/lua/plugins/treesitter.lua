@@ -8,8 +8,8 @@ return {
       "lua",
       "vim",
       "scss",
+      "css",
       "gitignore"
-      -- add more arguments for adding more treesitter parsers
     },
   },
 }

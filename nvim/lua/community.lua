@@ -14,6 +14,8 @@ return {
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
+  --comment
+  { import = "astrocommunity.comment.ts-comments-nvim" },
   -- pack
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.yaml" },
