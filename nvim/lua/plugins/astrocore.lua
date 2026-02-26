@@ -95,6 +95,12 @@ return {
         ["_"] = { "<Cmd>split<CR>", desc = "Horizontal Split" },
         ["|"] = { "<Cmd>vsplit<CR>", desc = "Vertical Split" },
 
+        -- copy current file path or name
+        ["<Leader>y"] = { name = "yank current buffer filename, filepath ..."},
+        ["<Leader>yfr"] = { "<Cmd>:let @+ = expand('%:.')<CR>", desc = "yank file relative path" },
+        ["<Leader>yfa"] = { "<Cmd>:let @+ = expand('%:p')<CR>", desc = "yank file absolute path" },
+        ["<Leader>yft"] = { "<Cmd>:let @+ = expand('%:t')<CR>", desc = "yank file name" },
+
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
       },
