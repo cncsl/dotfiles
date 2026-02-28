@@ -19,10 +19,21 @@ function M.apply_to_config(config)
 		mods = "LEADER",
 		action = act.CloseCurrentTab({ confirm = true }),
 	})
+	-- select next/previous tab
+	table.insert(keys, {
+		key = "]",
+		mods = "LEADER",
+		action = act.ActivateTabRelative(1),
+	})
+	table.insert(keys, {
+		key = "[",
+		mods = "LEADER",
+		action = act.ActivateTabRelative(-1),
+	})
 
 	-- select tab by index
 	for i = 1, 9 do
-		table.insert(config.keys, {
+		table.insert(keys, {
 			key = tostring(i),
 			mods = "LEADER",
 			action = act.ActivateTab(i - 1),
