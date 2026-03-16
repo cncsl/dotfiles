@@ -22,9 +22,9 @@ config.color_scheme = "Tokyo Night Storm"
 config.font_size = 18
 config.font = wezterm.font_with_fallback({
   "JetBrainsMono Nerd Font Mono", -- 英文 & Nerd 图标
-  "LXGW Neo XiHei Plus",          -- 中文（霞鹜新晰黑）
+  "LXGW Neo XiHei Plus",         -- 中文（霞鹜新晰黑）
 })
-config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 require("tabline").apply_to_config(config)
 require("multiplexing").apply_to_config(config)
@@ -51,5 +51,31 @@ table.insert(config.keys, {
   mods = "LEADER",
   action = wezterm.action.QuickSelect,
 })
+
+table.insert(config.keys, {
+  key = "r",
+  mods = "LEADER",
+  action = wezterm.action.ActivateKeyTable({
+    name = "rename",
+    one_shot = true,
+  }),
+})
+config.key_tables = {
+  rename = {
+    {
+      key = "w",
+      action = wezterm.action.PromptInputLine({
+        description = "Rename Workspace",
+        action = wezterm.action_callback(function(window, pane, line)
+          if line then
+            local mux = wezterm.mux
+            local ws = mux.get_active_workspace()
+            mux.rename_workspace(ws, line)
+          end
+        end),
+      }),
+    },
+  },
+}
 
 return config
