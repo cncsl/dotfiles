@@ -100,17 +100,27 @@ vmap * "ry/<C-R>r<CR>
 "" 快速关闭上次搜索结果高亮
 nmap <leader>nh :nohlsearch<CR>
 
+"" copy file name/path
+nmap <leader>yfr <Action>(CopyPathFromRepositoryRootProvider)
+nmap <leader>yfa <Action>(CopyAbsolutePath)
+nmap <leader>yfr <Action>(CopyFileName)
+
 " 插件
+
 " 高亮 yank 的文本
 Plug 'machakann/vim-highlightedyank'
+
 " Commentary plugin
 Plug 'tpope/vim-commentary'
+
 " matchit.vim
 Plug 'vim-matchit'
+
 " NERDTree
 Plug 'preservim/nerdtree'
 nmap <leader>e :NERDTree<CR>
 nmap <leader>o :NERDTreeToggle<CR>
+
 " surround
 Plug "tpope/vim-surround"
 
