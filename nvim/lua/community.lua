@@ -26,4 +26,6 @@ return {
   { import = "astrocommunity.pack.eslint" },
   { import = "astrocommunity.pack.prettier" },
   { import = "astrocommunity.pack.vue" },
+  -- dart/flutter
+  { import = "astrocommunity.pack.dart" },
 }
