@@ -183,3 +183,5 @@ if [ -e "$WORKSPACE_VOLUMES/work/config/zshrc_work" ]; then
   source "$WORKSPACE_VOLUMES/work/config/zshrc_work"
 fi
 
+
+. "$HOME/.local/bin/env"
