@@ -3,13 +3,17 @@
 
 format = """
 $directory\
+[](fg:#769ff0 bg:#394260)\
 $git_branch\
 $git_state\
 $git_status\
+[](fg:#394260 bg:#212736)\
 $java\
 $nodejs\
 $dart\
-\n$character"""
+[](fg:#212736)\
+$line_break\
+$character"""
 
 palette = "tokyonight_storm"
 
@@ -17,35 +21,33 @@ palette = "tokyonight_storm"
 [directory]
 truncation_length = 3
 truncate_to_repo = false
-style = "fg:#e3e5e5 bg:blue"
-format = "[ $path ]($style)[](fg:blue)"
-repo_root_style = ""
-repo_root_format = "[ $before_root_path$repo_root$path ]($style)[$read_only]($read_only_style)[](fg:blue bg:black)"
-
+style = "fg:#e3e5e5 bg:#769ff0"
+format = "[ $path ]($style)"
 
 [git_branch]
 symbol = ""
-style = "bg:background"
-format = "[[ $symbol $branch ](fg:blue bg:black)]($style)[](fg:black)"
+style = "bg:#394260"
+format = "[[ $symbol $branch](fg:#769ff0 bg:#394260)]($style)"
 
 
 [git_status]
-conflicted = "[󰹳${count}](red)"
-ahead = "[󰁝${count}](green)"
-behind = "[󰁅${count}](yellow)"
-diverged = "[󰹹](bold yellow)"
-untracked = "[?${count}](cyan)"
-stashed = "[\\$${count}](blue)"
-modified = "[!${count}](magenta)"
-staged = "[+${count}](green)"
-renamed = "[󱞩${count}](cyan)"
-deleted = "[󰅖${count}](red)"
-format = "[ $all_status$ahead_behind]($style)"
+conflicted = "[󰹳${count}](fg:red bg:#394260)"
+ahead = "[󰁝${count}](fg:green bg:#394260)"
+behind = "[󰁅${count}](fg:yellow bg:#394260)"
+diverged = "[󰹹](fg:bold yellow bg:#394260)"
+untracked = "[?${count}](fg:cyan bg:#394260)"
+stashed = "[\\$${count}](fg:blue bg:#394260)"
+modified = "[!${count}](fg:magenta bg:#394260)"
+staged = "[+${count}](fg:green bg:#394260)"
+renamed = "[󱞩${count}](fg:cyan bg:#394260)"
+deleted = "[󰅖${count}](fg:red bg:#394260)"
+style = "bg:#394269"
+format = "[[ $all_status$ahead_behind ](fg:#769ff0 bg:#394260)]($style)"
 
 
 [character]
-success_symbol = "[❯](fg:green)"
-error_symbol = "[](fg:red)"
+success_symbol = "[❯](bold fg:green)"
+error_symbol = "[❯](bold fg:red)"
 
 
 [package]
@@ -53,18 +55,22 @@ disabled = true
 
 [java]
 symbol = ""
+style = "bg:#212736"
 version_format = "v${major}"
-format = "[[ ${symbol} (${version}) ](fg:blue)]($style)"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [nodejs]
 symbol = "󰎙"
+style = "bg:#212736"
 version_format = "v${major}"
-format = "[[ ${symbol} (${version}) ](fg:blue)]($style)"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [dart]
 symbol = ""
+style = "bg:#212736"
 version_format = "v${major}"
-format = "[[ ${symbol} (${version}) ](fg:blue)]($style)"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
 
 [palettes.tokyonight_storm]
 black = "#414868"
