@@ -42,8 +42,18 @@ config.keys = config.keys or {}
 table.insert(config.keys, {
   key = "/",
   mods = "LEADER",
-  action = wezterm.action.Search({ CaseInSensitiveString = "" }),
-})
+  action = wezterm.action_callback(function(window, pane)
+    window:perform_action(wezterm.action.Search({ CaseInSensitiveString = "" }), pane)
+    window:perform_action(wezterm.action.Search("CurrentSelectionOrEmptyString"), pane)
+    window:perform_action(
+      wezterm.action.Multiple({
+        wezterm.action.CopyMode("ClearPattern"),
+        wezterm.action.CopyMode("ClearSelectionMode"),
+        wezterm.action.CopyMode("MoveToScrollbackBottom"),
+      }),
+      pane
+    )
+  end),})
 
 --- QuickSelect Mode
 table.insert(config.keys, {
