@@ -1,16 +1,17 @@
-[mgr]
-# NOTE: can be combined with tmTheme (sublime colorshceme file) for preview code highlight
-# syntect_theme = "path/to/tmTheme"
+#:schema = "https://yazi-rs.github.io/schemas/theme.json"
+[app]
+overall = { bg = "#1f2335"}
 
+[mgr]
 cwd = { fg = "#a9b1d6", italic = true }
 
-# Hovered
-hovered         = { bg = "#292e42" }
-preview_hovered = { bg = "#292e42" }
 
 # Find
 find_keyword  = { fg = "#1f2335", bg = "#ff9e64", bold = true }
 find_position = { fg = "#0db9d7", bg = "#22374b", bold = true }
+
+# Symlink
+symlink_target = {italic = true}
 
 # Marker
 marker_copied   = { fg = "#9ece6a", bg = "#9ece6a" }
@@ -41,6 +42,12 @@ select_alt  = { fg = "#bb9af7", bg = "#3b4261" }
 
 unset_main  = { fg = "#1d202f", bg = "#9d7cd8", bold = true }
 unset_alt   = { fg = "#9d7cd8", bg = "#3b4261" }
+
+# Hover
+[indicator]
+parent         = { bg = "#292e42" }
+current         = { bg = "#292e42" }
+preview = { bg = "#292e42" }
 
 [status]
 overall   = { fg = "#c0caf5", bg = "#1f2335" }
@@ -101,7 +108,7 @@ separator_style = { fg = "#565f89" }
 [confirm]
 border  = { fg = "#0db9d7" }
 title   = { fg = "#29a4bd" }
-content = {}
+body = {}
 list    = {}
 btn_yes = { bg = "#2e3c64" }
 btn_no  = {}
@@ -150,11 +157,11 @@ rules = [
 	# { mime = "inode/x-empty", fg = "#f7768e" },
 
 	# Special files
-	{ name = "*", is = "orphan", bg = "#f7768e" },
-	{ name = "*", is = "exec"  , fg = "#9ece6a" },
+	{ url = "*", is = "orphan", bg = "#f7768e" },
+	{ url = "*", is = "exec"  , fg = "#9ece6a" },
 
 	# Fallback
-	{ name = "*/", fg = "#7aa2f7" },
-	{ name = "*", fg = "#c0caf5" }
+	{ url = "*/", fg = "#7aa2f7" },
+	{ url = "*", fg = "#c0caf5" }
 ]
     
