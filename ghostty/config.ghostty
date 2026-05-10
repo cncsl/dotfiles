@@ -1,0 +1,35 @@
+# =========================
+# Core
+# =========================
+term = xterm-256color
+scrollback-limit = 10000
+scrollbar = never
+
+
+# =========================
+# Appearance
+# =========================
+theme = Catppuccin Mocha
+window-decoration = none
+window-padding-x = 0
+window-padding-y = 0
+# cursor
+cursor-style = block
+shell-integration-features = no-cursor
+
+
+# =========================
+# Font
+# =========================
+font-size = 18
+font-family = JetBrainsMono Nerd Font Mono
+font-family = Maple Mono NF CN
+font-feature = -calt, -clig, -liga
+
+
+# =========================
+# Interaction
+# =========================
+mouse-hide-while-typing = true
+macos-option-as-alt = true
+
