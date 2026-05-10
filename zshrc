@@ -20,6 +20,7 @@ zinit snippet OMZP::nvm
 zinit snippet OMZP::docker
 
 #---------- zsh ----------
+bindkey -e
 setopt auto_cd 
 setopt long_list_jobs
 setopt interactivecomments
