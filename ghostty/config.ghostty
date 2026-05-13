@@ -9,7 +9,7 @@ scrollbar = never
 # =========================
 # Appearance
 # =========================
-theme = Catppuccin Mocha
+theme = TokyoNight Storm
 window-decoration = none
 window-padding-x = 0
 window-padding-y = 0
