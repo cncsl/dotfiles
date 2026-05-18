@@ -6,8 +6,8 @@ Personal configuration files for shell, editors, git, and programming environmen
 
 ### shell utils
 
-- https://wezterm.org/
-- https://github.com/ohmyzsh/ohmyzsh
+- https://ghostty.org
+- https://github.com/tmux/tmux
 - https://yazi-rs.github.io/
 - https://starship.rs/
 - https://github.com/junegunn/fzf
@@ -39,9 +39,8 @@ Personal configuration files for shell, editors, git, and programming environmen
 
 ### other
 
-- https://github.com/fastfetch-cli/fastfetch
 - Nerd Font JetBrainsMono Nerd Font
-- Chinese Font https://github.com/lxgw/LxgwNeoXiHei
+- Chinese Font https://github.com/subframe7536/maple-font
 
 ## commands backup
 
@@ -50,40 +49,37 @@ It's only a backup for myself, please do not execute the following command direc
 ```shell
 ln -s $(pwd)/zshrc $HOME/.zshrc
 
-mkdir -p $HOME/.config
+export XDG_CONFIG_HOME="$HOME/.config"
+mkdir -p "$XDG_CONFIG_HOME"
+
 
 #------------- shell -------------
-ln -s $(pwd)/yazi $HOME/.config/yazi
-ln -s $(pwd)/starship.toml $HOME/.config/starship.toml
-ln -s $(pwd)/wezterm $HOME/.config/wezterm
+ln -s $(pwd)/yazi $XDG_CONFIG_HOME/yazi
+ln -s $(pwd)/starship.toml $XDG_CONFIG_HOME/starship.toml
+ln -s $(pwd)/wezterm $XDG_CONFIG_HOME/wezterm
+mkdir -p "$XDG_CONFIG_HOME/tmux" && ln -s $(pwd)/tmux.conf $XDG_CONFIG_HOME/tmux/tmux.conf
+
 
 #------------ editors ------------
-mkdir -p $HOME/.config/nvim/
-ln -s $(pwd)/nvim $HOME/.config/nvim
+mkdir -p "$XDG_CONFIG_HOME/nvim" && ln -s $(pwd)/nvim $XDG_CONFIG_HOME/nvim
 
 ln -s $(pwd)/vimrc $HOME/.vimrc
 ln -s $(pwd)/ideavimrc $HOME/.ideavimrc
+
 
 #-------------- git --------------
 ln -s $(pwd)/gitconfig $HOME/.gitconfig
 ln -s $(pwd)/gitignore_global $HOME/.gitignore_global
 
-if [ -z "$XDG_CONFIG_HOME" ]; then
-  mkdir -p "$HOME/Library/Application\ Support/lazygit/"
-  ln -s $(pwd)/lazygit_config.yml "$HOME/Library/Application\ Support/lazygit/config.yml"
-else
-  mkdir -p "$XDG_CONFIG_HOME/lazygit/"
-  ln -s $(pwd)/lazygit_config.yml $XDG_CONFIG_HOME/lazygit/config.yml
-fi
+mkdir -p "$XDG_CONFIG_HOME/lazygit/" && ln -s $(pwd)/lazygit_config.yml $XDG_CONFIG_HOME/lazygit/config.yml
+
 
 #----------- languages -----------
-mkdir -p "$HOME/.m2/"
-ln -s $(pwd)/lang/java/settings.xml $HOME/.m2/settings.xml
+mkdir -p "$HOME/.m2/" && ln -s $(pwd)/lang/java/settings.xml $HOME/.m2/settings.xml
 
 ln -s $(pwd)/npmrc $HOME/.npmrc
 
-mkdir -p "$HOME/.pip/"
-ln -s $(pwd)/lang/python/pip.conf $HOME/.config/pip/pip.conf
+mkdir -p "$XDG_CONFIG_HOME/.pip/" && ln -s $(pwd)/lang/python/pip.conf $HOME/.config/pip/pip.conf
 
 
 #----------- others -----------
