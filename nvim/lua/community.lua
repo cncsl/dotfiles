@@ -28,4 +28,6 @@ return {
   { import = "astrocommunity.pack.vue" },
   -- dart/flutter
   { import = "astrocommunity.pack.dart" },
+  -- rust
+  { import = "astrocommunity.pack.rust" },
 }
