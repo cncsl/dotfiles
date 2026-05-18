@@ -3,89 +3,26 @@ local config = wezterm.config_builder()
 
 -- core
 config.term = "xterm-256color"
-config.leader = {
-  key = "a",
-  mods = "CTRL",
-  timeout_milliseconds = 3000,
-}
-config.keys = config.keys or {}
-table.insert(config.keys, {
-  key = "a",
-  mods = "LEADER|CTRL",
-  action = wezterm.action.SendKey({ key = "a", mods = "CTRL" }),
-})
 
 --- colorscheme
 config.color_scheme = "Tokyo Night Storm"
 
+--- UI
+config.window_decorations = "RESIZE"
+config.enable_tab_bar = false
+config.window_padding = {
+  left = 1,
+  right = 1,
+  top = 1,
+  bottom = 1,
+}
+
 --- font
 config.font_size = 18
 config.font = wezterm.font_with_fallback({
-  "JetBrainsMono Nerd Font Mono", -- 英文 & Nerd 图标
-  "LXGW Neo XiHei Plus",         -- 中文（霞鹜新晰黑）
+	"JetBrainsMono Nerd Font Mono",
+	"Maple Mono NF CN",
 })
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
-
-require("tabline").apply_to_config(config)
-require("multiplexing").apply_to_config(config)
-
---- Copy Mode
-config.keys = config.keys or {}
-table.insert(config.keys, {
-  key = "v",
-  mods = "LEADER",
-  action = wezterm.action.ActivateCopyMode,
-})
-
---- Search Mode
-config.keys = config.keys or {}
-table.insert(config.keys, {
-  key = "/",
-  mods = "LEADER",
-  action = wezterm.action_callback(function(window, pane)
-    window:perform_action(wezterm.action.Search({ CaseInSensitiveString = "" }), pane)
-    window:perform_action(wezterm.action.Search("CurrentSelectionOrEmptyString"), pane)
-    window:perform_action(
-      wezterm.action.Multiple({
-        wezterm.action.CopyMode("ClearPattern"),
-        wezterm.action.CopyMode("ClearSelectionMode"),
-        wezterm.action.CopyMode("MoveToScrollbackBottom"),
-      }),
-      pane
-    )
-  end),})
-
---- QuickSelect Mode
-table.insert(config.keys, {
-  key = "f",
-  mods = "LEADER",
-  action = wezterm.action.QuickSelect,
-})
-
-table.insert(config.keys, {
-  key = "r",
-  mods = "LEADER",
-  action = wezterm.action.ActivateKeyTable({
-    name = "rename",
-    one_shot = true,
-  }),
-})
-config.key_tables = {
-  rename = {
-    {
-      key = "w",
-      action = wezterm.action.PromptInputLine({
-        description = "Rename Workspace",
-        action = wezterm.action_callback(function(window, pane, line)
-          if line then
-            local mux = wezterm.mux
-            local ws = mux.get_active_workspace()
-            mux.rename_workspace(ws, line)
-          end
-        end),
-      }),
-    },
-  },
-}
 
 return config
