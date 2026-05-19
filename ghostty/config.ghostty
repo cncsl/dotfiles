@@ -10,7 +10,7 @@ scrollbar = never
 # Appearance
 # =========================
 theme = TokyoNight Storm
-window-decoration = none
+macos-titlebar-style = hidden
 window-padding-x = 0
 window-padding-y = 0
 # cursor
