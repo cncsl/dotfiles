@@ -91,6 +91,24 @@ alias la='ls -lAh'
 alias grep='grep --color=auto'
 
 
+#---------- custom ----------
+export XDG_CONFIG_HOME="$HOME/.config"
+export LANG=en_US.UTF-8
+export EDITOR='nvim'
+
+#---------- Homebrew ----------
+eval "$(brew shellenv)"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git" 
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
+
+
+#---------- uv ----------
+eval "$(uv generate-shell-completion zsh)"
+export PATH="$HOME/.local/bin:$PATH"
+
+
 #---------- fzf ----------
 export FZF_DEFAULT_OPTS=" --highlight-line \
   --info=inline-right \
@@ -131,23 +149,9 @@ function y() {
 }
 
 
-#---------- Shell Utils ----------
+#---------- Other Shell Utils ----------
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-
-
-#---------- custom ----------
-export XDG_CONFIG_HOME="$HOME/.config"
-export LANG=en_US.UTF-8
-export EDITOR='nvim'
-
-
-#---------- Homebrew ----------
-eval "$(brew shellenv)"
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git" 
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
-export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 
 #---------- workspace path ----------
@@ -184,5 +188,3 @@ if [ -e "$WORKSPACE_VOLUMES/work/config/zshrc_work" ]; then
   source "$WORKSPACE_VOLUMES/work/config/zshrc_work"
 fi
 
-
-. "$HOME/.local/bin/env"
