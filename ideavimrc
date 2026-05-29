@@ -98,7 +98,7 @@ nmap <leader>dE <Action>(EvaluateExpression)
 vmap * "ry/<C-R>r<CR>
 
 "" 快速关闭上次搜索结果高亮
-nmap <leader>nh :nohlsearch<CR>
+nnoremap <silent> <Esc> :noh<CR><Esc>
 
 "" copy file name/path
 nmap <leader>yfr <Action>(CopyPathFromRepositoryRootProvider)
@@ -124,6 +124,8 @@ nmap <leader>o :NERDTreeToggle<CR>
 " surround
 Plug "tpope/vim-surround"
 
-" 输入法切换
-set keep-english-in-normal
-
+" 非动切换输入法
+augroup im_select
+    autocmd!
+    autocmd WinEnter,InsertLeave,FocusGained * execute '!im-select com.apple.keylayout.ABC'
+augroup END
