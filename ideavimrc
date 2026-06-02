@@ -124,8 +124,5 @@ nmap <leader>o :NERDTreeToggle<CR>
 " surround
 Plug "tpope/vim-surround"
 
-" 非动切换输入法
-augroup im_select
-    autocmd!
-    autocmd WinEnter,InsertLeave,FocusGained * execute '!im-select com.apple.keylayout.ABC'
-augroup END
+" 自动切换输入法
+set keep-english-in-normal
