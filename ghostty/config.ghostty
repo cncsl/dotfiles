@@ -3,7 +3,6 @@
 # =========================
 scrollback-limit = 10000
 scrollbar = never
-initial-command = /bin/zsh -l -c "tmux a || tmux new -s main"
 
 
 # =========================
