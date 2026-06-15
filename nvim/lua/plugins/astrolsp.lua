@@ -44,6 +44,11 @@ return {
     -- client specific configuration can also go in `lsp/` in your configuration root (see `:h lsp-config`)
     config = {
       -- ["*"] = { capabilities = {} }, -- modify default LSP client settings such as capabilities
+      typos_lsp = {
+        init_options = {
+          diagnosticSeverity = "Hint"
+        }
+      }
     },
     -- customize how language servers are attached
     handlers = {
