@@ -177,8 +177,8 @@ fi
 flutter_home="$WORKSPACE_VOLUMES/develop/flutter"
 if [ -d "$flutter_home" ]; then
   export PATH="$flutter_home/bin:$PATH"
-  export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub;
-  export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
+  export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
+  export FLUTTER_STORAGE_BASE_URL="https://mirrors.cernet.edu.cn/flutter"
 else
   echo "Flutter is not installed yet"
 fi
