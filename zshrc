@@ -174,9 +174,9 @@ fi
 
 
 #---------- Flutter ----------
-flutter_home="$WORKSPACE_VOLUMES/develop/flutter"
-if [ -d "$flutter_home" ]; then
-  export PATH="$flutter_home/bin:$PATH"
+FLUTTER_HOME="$WORKSPACE_VOLUMES/develop/flutter"
+if [ -d "$FLUTTER_HOME" ]; then
+  export PATH="$FLUTTER_HOME/bin:$PATH"
   export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
   export FLUTTER_STORAGE_BASE_URL="https://mirrors.cernet.edu.cn/flutter"
 else
