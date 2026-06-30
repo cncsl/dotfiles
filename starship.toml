@@ -11,6 +11,7 @@ $git_status\
 $java\
 $nodejs\
 $dart\
+$rust\
 [](fg:#212736)\
 $line_break\
 $character"""
@@ -67,6 +68,12 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [dart]
 symbol = ""
+style = "bg:#212736"
+version_format = "v${major}"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
 style = "bg:#212736"
 version_format = "v${major}"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
