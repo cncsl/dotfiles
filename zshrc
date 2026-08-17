@@ -16,7 +16,10 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit snippet OMZP::zoxide
 zinit snippet OMZP::sdk
-zinit snippet OMZP::nvm
+
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
+zinit light lukechilds/zsh-nvm
 zinit snippet OMZP::docker
 
 #---------- zsh ----------
