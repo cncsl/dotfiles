@@ -56,12 +56,12 @@ mkdir -p "$XDG_CONFIG_HOME"
 #------------- shell -------------
 ln -s $(pwd)/yazi $XDG_CONFIG_HOME/yazi
 ln -s $(pwd)/starship.toml $XDG_CONFIG_HOME/starship.toml
-ln -s $(pwd)/wezterm $XDG_CONFIG_HOME/wezterm
+ln -s $(pwd)/ghostty $XDG_CONFIG_HOME
 mkdir -p "$XDG_CONFIG_HOME/tmux" && ln -s $(pwd)/tmux.conf $XDG_CONFIG_HOME/tmux/tmux.conf
 
 
 #------------ editors ------------
-mkdir -p "$XDG_CONFIG_HOME/nvim" && ln -s $(pwd)/nvim $XDG_CONFIG_HOME/nvim
+ln -s $(pwd)/nvim $XDG_CONFIG_HOME
 
 ln -s $(pwd)/vimrc $HOME/.vimrc
 ln -s $(pwd)/ideavimrc $HOME/.ideavimrc
