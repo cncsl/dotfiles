@@ -15,5 +15,3 @@
 
 [includeIf "gitdir:/Volumes/workspace/work/work_codes/"]
   path = /Volumes/workspace/work/config/gitconfig
-[diff]
-	external = difft
