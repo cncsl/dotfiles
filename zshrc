@@ -20,7 +20,6 @@ zinit snippet OMZP::sdk
 export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
 zinit light lukechilds/zsh-nvm
-zinit snippet OMZP::docker
 
 #---------- zsh ----------
 bindkey -e
