@@ -78,7 +78,7 @@ mkdir -p "$XDG_CONFIG_HOME/lazygit/" && ln -s $(pwd)/lazygit_config.yml $XDG_CON
 mkdir -p "$HOME/.m2/" && ln -s $(pwd)/lang/java/settings.xml $HOME/.m2/settings.xml
 mkdir -p "$HOME/.sdkman/etc" && ln -s $(pwd)/lang/java/sdkman_config $HOME/.sdkman/etc/config
 
-ln -s $(pwd)/npmrc $HOME/.npmrc
+ln -s $(pwd)/lang/node/npmrc $HOME/.npmrc
 
 mkdir -p "$XDG_CONFIG_HOME/.pip/" && ln -s $(pwd)/lang/python/pip.conf $HOME/.config/pip/pip.conf
 
