@@ -31,4 +31,4 @@ font-feature = -calt, -clig, -liga
 # =========================
 mouse-hide-while-typing = true
 macos-option-as-alt = true
-
+cursor-click-to-move = false
