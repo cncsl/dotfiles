@@ -56,7 +56,6 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_verify
-setopt share_history
 
 # fuzzy find history forward
 autoload -U up-line-or-beginning-search
