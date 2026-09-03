@@ -104,12 +104,6 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
 export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
-
-#---------- uv ----------
-eval "$(uv generate-shell-completion zsh)"
-export PATH="$HOME/.local/bin:$PATH"
-
-
 #---------- fzf ----------
 export FZF_DEFAULT_OPTS=" --highlight-line \
   --info=inline-right \
