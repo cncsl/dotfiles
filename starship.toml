@@ -13,6 +13,7 @@ $nodejs\
 $dart\
 $rust\
 [](fg:#212736)\
+${custom.proxy_status}\
 $line_break\
 $character"""
 
@@ -78,6 +79,12 @@ style = "bg:#212736"
 version_format = "v${major}"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
+[custom.proxy_status]
+command = "echo PROXY"
+when = "test -n \"$http_proxy\" || test -n \"$https_proxy\" || test -n \"$HTTP_PROXY\" || test -n \"$HTTPS_PROXY\" || test -n \"$all_proxy\" || test -n \"$ALL_PROXY\""
+symbol = "󰒍 "
+style = "bold red"
+format = "[$symbol$output]($style) "
 
 [palettes.tokyonight_storm]
 black = "#414868"
