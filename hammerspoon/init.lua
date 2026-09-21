@@ -138,7 +138,7 @@ if spoon.KSheet then
 	end)
 end
 
-hs.application.watcher
+ime_auto_switcher = hs.application.watcher
 	.new(function(_, eventType, appObj)
 		if eventType ~= hs.application.watcher.activated then
 			return
