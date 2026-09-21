@@ -37,6 +37,11 @@ Personal configuration files for shell, editors, git, and programming environmen
 
 - https://github.com/folke/tokyonight.nvim
 
+### hammerspoon
+
+- http://www.hammerspoon.org/
+- thanks for the inspiration from [awesome-hammerspoon](https://github.com/ashfinal/awesome-hammerspoon)
+
 ### other
 
 - Nerd Font JetBrainsMono Nerd Font
@@ -84,5 +89,5 @@ mkdir -p "$XDG_CONFIG_HOME/.pip/" && ln -s $(pwd)/lang/python/pip.conf $HOME/.co
 
 
 #----------- others -----------
-softwareupdate --install-rosetta
+ln -s $(pwd)/hammerspoon $HOME/.hammerspoon
 ```
