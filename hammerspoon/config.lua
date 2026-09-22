@@ -21,7 +21,7 @@ return {
 	ime_list = ime,
 
 	apps = {
-		{ key = "f", name = "Finder", id = "com.apple.finder", direct = true },
+		{ key = "f", name = "Finder", id = "com.apple.finder" },
 		{ key = "b", name = "Google Chrome", id = "com.google.Chrome", direct = true },
 		{ key = "t", name = "Ghostty", id = "com.mitchellh.ghostty", direct = true },
 		{ key = "i", name = "Jetbrains Intellij IDEA", id = "com.jetbrains.intellij", direct = true },
