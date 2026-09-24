@@ -34,14 +34,6 @@ function obj:init()
     self.sheetView:allowGestures(true)
     self.sheetView:allowNewWindows(false)
     self.sheetView:level(hs.drawing.windowLevels.tornOffMenu)
-    local cscreen = hs.screen.mainScreen()
-    local cres = cscreen:fullFrame()
-    self.sheetView:frame({
-        x = cres.x+cres.w*0.15/2,
-        y = cres.y+cres.h*0.25/2,
-        w = cres.w*0.85,
-        h = cres.h*0.75
-    })
 end
 
 local function processMenuItems(menustru)
@@ -199,6 +191,14 @@ end
 function obj:show()
     local capp = hs.application.frontmostApplication()
     local webcontent = generateHtml(capp)
+    local cscreen = hs.screen.mainScreen()
+    local cres = cscreen:fullFrame()
+    self.sheetView:frame({
+        x = cres.x+cres.w*0.15/2,
+        y = cres.y+cres.h*0.25/2,
+        w = cres.w*0.85,
+        h = cres.h*0.75
+    })
     self.sheetView:html(webcontent)
     self.sheetView:show()
 end
