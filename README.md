@@ -2,54 +2,61 @@
 
 Personal configuration files for shell, editors, git, and programming environments.
 
-## list
+## Shell & CLI
 
-### shell utils
+- [Ghostty](https://ghostty.org)
+- [tmux](https://github.com/tmux/tmux)
+- [yazi](https://yazi-rs.github.io)
+- [starship](https://starship.rs)
+- [fzf](https://github.com/junegunn/fzf)
 
-- https://ghostty.org
-- https://github.com/tmux/tmux
-- https://yazi-rs.github.io/
-- https://starship.rs/
-- https://github.com/junegunn/fzf
+## Editors
 
-### editors
+- [Neovim](https://neovim.io)
+- [Astronvim](https://astronvim.com)
+- [ideavim](https://github.com/JetBrains/ideavim)
+- [Typora](https://typora.io/) (for Markdown)
 
-- https://neovim.io/
-- https://astronvim.com/
-- https://github.com/JetBrains/ideavim
-- https://typora.io/
+## Development
 
-### develop
-
-- [Docker Desktop](https://www.docker.com/)
+- [Docker Desktop](https://www.docker.com)
 - [nvm](https://github.com/nvm-sh/nvm)
-- [GraalVM](https://www.graalvm.org)
+- [sdkman](https://sdkman.io)
 - [maven](https://maven.apache.org)
-- [Jetbrains Toolbox App](https://www.jetbrains.com/zh-cn/toolbox-app/) and some IDE
-- [Flutter](https://docs.flutter.dev) (not include platform specific dependencies)
+- [JetBrains Toolbox](https://www.jetbrains.com/zh-cn/toolbox-app/) and some IDEs
+- [Flutter](https://docs.flutter.dev)
 
-### git
+## Git
 
-- https://git-scm.com/
-- https://github.com/jesseduffield/lazygit
+- [Git](https://git-scm.com)
+- [Lazygit](https://github.com/jesseduffield/lazygit)
 
-### colorschema
+## Fonts
 
-- https://github.com/folke/tokyonight.nvim
+- JetBrainsMono Nerd Font
+- [Maple Font](https://github.com/subframe7536/maple-font) (for Chinese Characters)
 
-### hammerspoon
+## macOS
 
-- http://www.hammerspoon.org/
-- thanks for the inspiration from [awesome-hammerspoon](https://github.com/ashfinal/awesome-hammerspoon)
+### [Karabiner-Elements](https://karabiner-elements.pqrs.org)
 
-### other
+- hold `caps_lock` → `Hyper` (`<ctrl-cmd-option>`, `Shift` is reserved for uppercase bindings)
+- `<Hyper-h>` = `←` (left arrow, and `j`, `k`, `l` for up, down, right)
 
-- Nerd Font JetBrainsMono Nerd Font
-- Chinese Font https://github.com/subframe7536/maple-font
+### [Hammerspoon](http://www.hammerspoon.org)
+> Inspired by [awesome-hammerspoon](https://github.com/ashfinal/awesome-hammerspoon)
+- `<Hyper-w>`: window management
+- `<Hyper-s>`: system control
+- `<Hyper-o>`: application launcher
+ 
+## Theme
 
-## commands backup
+- [tokyonight](https://github.com/folke/tokyonight.nvim)
 
-It's only a backup for myself, please do not execute the following command directly.
+## Setup
+
+> These commands are kept as a reference for setting up a new machine.
+> Do not execute them blindly. Adjust paths and existing files according to the local environment.
 
 ```shell
 ln -s $(pwd)/zshrc $HOME/.zshrc
@@ -68,7 +75,6 @@ mkdir -p "$XDG_CONFIG_HOME/tmux" && ln -s $(pwd)/tmux.conf $XDG_CONFIG_HOME/tmux
 #------------ editors ------------
 ln -s $(pwd)/nvim $XDG_CONFIG_HOME
 
-ln -s $(pwd)/vimrc $HOME/.vimrc
 ln -s $(pwd)/ideavimrc $HOME/.ideavimrc
 
 
@@ -76,18 +82,19 @@ ln -s $(pwd)/ideavimrc $HOME/.ideavimrc
 ln -s $(pwd)/gitconfig $HOME/.gitconfig
 ln -s $(pwd)/gitignore_global $HOME/.gitignore_global
 
-mkdir -p "$XDG_CONFIG_HOME/lazygit/" && ln -s $(pwd)/lazygit_config.yml $XDG_CONFIG_HOME/lazygit/config.yml
+mkdir -p "$XDG_CONFIG_HOME/lazygit" && ln -s $(pwd)/lazygit_config.yml $XDG_CONFIG_HOME/lazygit/config.yml
 
 
 #----------- languages -----------
-mkdir -p "$HOME/.m2/" && ln -s $(pwd)/lang/java/settings.xml $HOME/.m2/settings.xml
+mkdir -p "$HOME/.m2" && ln -s $(pwd)/lang/java/settings.xml $HOME/.m2/settings.xml
 mkdir -p "$HOME/.sdkman/etc" && ln -s $(pwd)/lang/java/sdkman_config $HOME/.sdkman/etc/config
 
 ln -s $(pwd)/lang/node/npmrc $HOME/.npmrc
 
-mkdir -p "$XDG_CONFIG_HOME/.pip/" && ln -s $(pwd)/lang/python/pip.conf $HOME/.config/pip/pip.conf
+mkdir -p "$XDG_CONFIG_HOME/pip" && ln -s $(pwd)/lang/python/pip.conf $XDG_CONFIG_HOME/pip/pip.conf
 
 
 #----------- others -----------
 ln -s $(pwd)/hammerspoon $HOME/.hammerspoon
+ln -s $(pwd)/karabiner $XDG_CONFIG_HOME
 ```
