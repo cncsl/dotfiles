@@ -17,6 +17,7 @@ for _, v in ipairs(config.spoons) do
 end
 
 require("module/system_control").init(config)
+require("module/clipboard").init(config)
 require("module/app_switcher").init(config)
 require("module/ime_control").init(config)
 require("module/window_mgr").init(config)
