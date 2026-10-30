@@ -1,5 +1,6 @@
 local ime = {
 	DEFAULT = "com.apple.keylayout.ABC",
+	ENGLISH_IME = "com.apple.keylayout.ABC",
 	CHINESE_IME = "com.apple.inputmethod.SCIM.ITABC",
 }
 
@@ -18,13 +19,11 @@ return {
 		"KSheet",
 	},
 
-	ime_list = ime,
-
 	apps = {
 		{ key = "f", name = "Finder", id = "com.apple.finder" },
 		{ key = "b", name = "Google Chrome", id = "com.google.Chrome", direct = true },
-		{ key = "t", name = "Ghostty", id = "com.mitchellh.ghostty", direct = true },
-		{ key = "i", name = "Jetbrains Intellij IDEA", id = "com.jetbrains.intellij", direct = true },
+		{ key = "t", name = "Ghostty", id = "com.mitchellh.ghostty", ime = ime.ENGLISH_IME, direct = true },
+		{ key = "i", name = "Jetbrains Intellij IDEA", id = "com.jetbrains.intellij", ime = ime.ENGLISH_IME, direct = true },
 		{ key = "x", name = "微信", id = "com.tencent.xinWeChat", ime = ime.CHINESE_IME, direct = true },
 		{ key = "c", name = "企业微信", id = "com.tencent.WeWorkMac", ime = ime.CHINESE_IME, direct = true },
 	},

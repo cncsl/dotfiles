@@ -6,14 +6,12 @@ function M.init(config)
 			if eventType ~= hs.application.watcher.activated then
 				return
 			end
-			local new_ime = config.ime_list.DEFAULT
 			for _, app in ipairs(config.apps) do
-				if app.id == appObj:bundleID() then
-					new_ime = app.ime or config.ime_list.DEFAULT
+				if app.id == appObj:bundleID() and app.ime then
+					hs.keycodes.currentSourceID(app.ime)
 					break
 				end
 			end
-			hs.keycodes.currentSourceID(new_ime)
 		end)
 		:start()
 end
