@@ -23,8 +23,11 @@ set clipboard+=unnamed
 let mapleader=" "
 let g:mapleader=" "
 
-" idea
+"" idea
+" smarter J
 set ideajoin
+" split windows/panes each has their own jump list.(like vim/nvim default)
+set ideawindowjumps
 
 "" find
 nmap <leader>fa <Action>(SearchEverywhere)
