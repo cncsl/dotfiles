@@ -17,6 +17,7 @@ zinit light zsh-users/zsh-completions
 zinit snippet OMZP::zoxide
 zinit snippet OMZP::sdk
 
+export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
 zinit light lukechilds/zsh-nvm
