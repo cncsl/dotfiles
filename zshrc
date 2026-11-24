@@ -18,7 +18,6 @@ zinit snippet OMZP::zoxide
 zinit snippet OMZP::sdk
 
 export NVM_COMPLETION=true
-export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
 zinit light lukechilds/zsh-nvm
 
@@ -46,6 +45,39 @@ if [[ -n "${terminfo[kcbt]}" ]]; then
   bindkey -M viins "${terminfo[kcbt]}" reverse-menu-complete
   bindkey -M vicmd "${terminfo[kcbt]}" reverse-menu-complete
 fi
+
+# Zinit wraps autoload calls during plugin loading, creating functions like:
+#   _tags() { local -a fpath; fpath=(...); builtin autoload -X }
+# This extra fpath wrapper changes the function call stack depth, breaking comptags
+# which uses stack depth to track completion tags. Results in errors like:
+#   _tags:comptags:67: no tags registered
+#
+# SOLUTION: Before compinit, remove any completion functions that have zinit's
+# wrapper pattern. Then compinit properly defines them as standard autoload stubs.
+#
+# PERFORMANCE: The loop is fast (just pattern matching). Compinit uses -C flag
+# to skip full fpath scan when zcompdump cache is fresh (< 20h old).
+#
+# See: https://www.zsh.org/mla/users/2016/msg00833.html
+() {
+  # Remove zinit's autoload wrapper if present
+  (( ${+functions[autoload]} )) && unfunction autoload 2>/dev/null
+
+  # Only remove functions with zinit's specific wrapper pattern (has fpath manipulation)
+  # This is more targeted than matching all 'autoload -X' which would also match
+  # zsh's standard stubs
+  local func
+  for func in ${(k)functions[(I)_*]}; do
+    [[ "${functions[$func]}" == *"local -a fpath"*"autoload -X"* ]] && unfunction "$func" 2>/dev/null
+  done
+
+  builtin autoload -Uz compinit
+  # Use -C (skip audit) only if zcompdump was recently modified
+  local -a compinit_opts=()
+  [[ -f ~/.zcompdump && ~/.zcompdump(#qNmh-20) ]] && compinit_opts=(-C)
+  compinit "${compinit_opts[@]}" -d "${ZINIT[ZCOMPDUMP_PATH]:-${ZDOTDIR:-$HOME}/.zcompdump}"
+}
+zinit cdreplay -q
 
 #---------- zsh history ----------
 HISTFILE="$HOME/.zsh_history"
