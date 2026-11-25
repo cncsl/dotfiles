@@ -6,7 +6,7 @@
 return {
   "AstroNvim/astrocommunity",
   --editor
-  { import = "astrocommunity.motion.nvim-surround"},
+  { import = "astrocommunity.motion.nvim-surround" },
   --theme
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   --ui/ux
@@ -14,6 +14,9 @@ return {
   { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
+
+  { import = "astrocommunity.editing-support.conform-nvim" },
+
   --comment
   { import = "astrocommunity.comment.ts-comments-nvim" },
   -- pack
@@ -22,9 +25,12 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.markdown" },
-  -- vue
+  -- typescript
+  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.eslint" },
   { import = "astrocommunity.pack.prettier" },
+  { import = "astrocommunity.pack.html-css" },
+  -- vue
   { import = "astrocommunity.pack.vue" },
   -- dart/flutter
   { import = "astrocommunity.pack.dart" },
