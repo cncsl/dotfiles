@@ -35,9 +35,18 @@ return {
     },
   },
   {
-    {
-      "wakatime/vim-wakatime",
-      lazy = false,
+    "wakatime/vim-wakatime",
+    lazy = false,
+  },
+  {
+    "smart-splits-nvim/smart-splits.nvim",
+    lazy = false,
+    opts = {
+      mux = { backend = "smart-splits-backend-tmux" },
+      move = { at_edge = "stop" },
+    },
+    dependencies = {
+      { "smart-splits-nvim/backend-tmux", main = "smart-splits-backend-tmux" },
     },
   },
   {
