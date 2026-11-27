@@ -20,7 +20,6 @@ return {
 	},
 
 	apps = {
-		{ key = "f", name = "Finder", id = "com.apple.finder" },
 		{ key = "b", name = "Google Chrome", id = "com.google.Chrome", direct = true },
 		{ key = "t", name = "Ghostty", id = "com.mitchellh.ghostty", ime = ime.ENGLISH_IME, direct = true },
 		{ key = "i", name = "Jetbrains Intellij IDEA", id = "com.jetbrains.intellij", ime = ime.ENGLISH_IME, direct = true },
